@@ -1,0 +1,28 @@
+/* All */
+*,
+*::after,
+*::before {
+    /* Margin and padding */
+    margin: 0;
+    padding: 0;
+
+    /* Box sizing */
+    box-sizing: inherit;
+}
+
+body {
+    /* Box-sizing */
+    box-sizing: border-box;
+
+    /* Size */
+    width: 100vw;
+    min-height: 100vh;
+
+    /* Display */
+    display: flex;
+}
+
+ul {
+    /* List style */
+    list-style: none;
+}

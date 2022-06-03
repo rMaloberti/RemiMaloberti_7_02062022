@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"style.css"}
+{"version":3,"sourceRoot":"","sources":["../../sass/base/_base.scss","../../sass/base/_typography.scss"],"names":[],"mappings":"AACA,qBAII,SACA,UAGA,mBAGJ,KAEI,sBAGA,YACA,iBAGA,aAGJ,GAEI,gBCzBJ,WACI,2BACA,kEAGJ,WACI,wBACA","file":"style.css"}
