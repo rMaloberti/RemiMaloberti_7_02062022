@@ -9,6 +9,9 @@
     /* Box sizing */
     box-sizing: inherit;
 
+    /* Fonts */
+    font-family: "Lato-regular", sans-serif;
+    font-weight: 400;
     font-size: 18px;
 }
 
@@ -34,7 +37,12 @@ ul {
     list-style: none;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+}
+
 fieldset, input {
     border: transparent;
-    border-radius: .25vw;
+    border-radius: .35em;
 }

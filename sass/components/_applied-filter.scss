@@ -1,0 +1,42 @@
+.applied-filter {
+    display: flex;
+    align-items: center;
+    gap: .75em;
+
+    border-radius: .35em;
+
+    padding: .75em 1.25em;
+
+    &--ingredient {
+        background-color: $blue;
+    }
+
+    &--applience {
+        background-color: $green;
+    }
+    
+    &--tool {
+        background-color: $red;
+    }
+
+    &__text {
+        font-family: "Lato-bold", sans-serif;
+        font-weight: 700;
+        color: white;
+        font-size: .9em;
+        
+    }
+
+    .remove-filter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__icon {
+            width: 1.3em;
+            height: 1.3em;
+            background-image: url("../../assets/icons/remove.svg");
+            background-size: cover;
+        }
+    }
+}
