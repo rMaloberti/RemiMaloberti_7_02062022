@@ -8,6 +8,8 @@
 
     /* Box sizing */
     box-sizing: inherit;
+
+    font-size: 18px;
 }
 
 body {
@@ -15,14 +17,24 @@ body {
     box-sizing: border-box;
 
     /* Size */
-    width: 100vw;
+    width: 85vw;
     min-height: 100vh;
 
     /* Display */
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Margin and padding */
+    margin: 0 auto;
 }
 
 ul {
     /* List style */
     list-style: none;
+}
+
+fieldset, input {
+    border: transparent;
+    border-radius: .25vw;
 }
