@@ -1,11 +1,12 @@
 .applied-filter {
     display: flex;
     align-items: center;
-    gap: .75em;
+    gap: .5em;
+
+    padding: .25em 1em;
 
     border-radius: .35em;
 
-    padding: .75em 1.25em;
 
     &--ingredient {
         background-color: $blue;
@@ -24,19 +25,21 @@
         font-weight: 700;
         color: white;
         font-size: .9em;
-        
     }
 
     .remove-filter {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
 
         &__icon {
-            width: 1.3em;
-            height: 1.3em;
+            width: 2em;
+            height: 2em;
+            border: .25em solid transparent;
             background-image: url("../../assets/icons/remove.svg");
             background-size: cover;
+            background-repeat: no-repeat;
         }
     }
 }
