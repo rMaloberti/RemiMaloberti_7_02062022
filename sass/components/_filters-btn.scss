@@ -1,0 +1,45 @@
+.filters-btn {
+    display: flex;
+    gap: 2em;
+
+    padding: 1.5em 1em;
+
+    border-radius: .35em;
+
+    &--ingredients {
+        background-color: $blue;
+    }
+
+    &--appliences {
+        background-color: $green;
+    }
+
+    &--tools {
+        background-color: $red;
+    }
+
+    &__text {
+        font-family: "Lato-bold", sans-serif;
+        font-weight: 700;
+        color: white;
+    }
+
+    .filters-btn-toggle {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__icon {
+            width: 1em;
+            height: .5em;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            &--closed {
+                background-image: url("../../assets/icons/arrow-down.svg");                
+            }
+        }
+    }
+}

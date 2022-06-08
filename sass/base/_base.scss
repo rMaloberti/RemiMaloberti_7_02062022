@@ -8,6 +8,11 @@
 
     /* Box sizing */
     box-sizing: inherit;
+
+    /* Fonts */
+    font-family: "Lato-regular", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 body {
@@ -15,14 +20,29 @@ body {
     box-sizing: border-box;
 
     /* Size */
-    width: 100vw;
+    width: 85vw;
     min-height: 100vh;
 
     /* Display */
     display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Margin and padding */
+    margin: 0 auto;
 }
 
 ul {
     /* List style */
     list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+fieldset, input {
+    border: transparent;
+    border-radius: .35em;
 }
