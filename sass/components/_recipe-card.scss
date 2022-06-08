@@ -1,5 +1,5 @@
 .recipe-card {
-    width: 30%;
+    width: 31.5%;
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
             padding-top: 1em;
 
             .desc-body-ingredients {
-                max-width: 50%;
+                max-width: 49%;
 
                 .desc-body-ingredient {
                     font-size: 0.8em;
@@ -65,7 +65,7 @@
             }
 
             &__instructions {
-                max-width: 50%;
+                max-width: 49%;
                 font-size: 0.8em;
             }
         }
