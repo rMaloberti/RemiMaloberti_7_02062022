@@ -23,35 +23,55 @@
             </div>
         </header>
         <main class="main-wrapper">
-            <section class="main-search">
+            <section id="main-search" class="main-search">
                 <form action="" method="get" class="main-search__form">
                     <fieldset class="main-search-fieldset">
                         <input id="main-search-bar" class="main-search-bar" type="search" placeholder="Rechercher une recette" />
-                        <buttton id="main-search-button" class="main-search-button" type="button">
-                            <i class="main-search-button__icon"></i>
+                        <buttton id="main-search-btn" class="main-search-btn" type="button">
+                            <i class="main-search-btn__icon"></i>
                         </buttton>
                     </fieldset>
                 </form>
             </section>
-            <section class="applied-filters">
+            <section id="applied-filters" class="applied-filters">
                 <div class="applied-filter applied-filter--ingredient">
-                    <p class="applied-filter__text">Test ingrédient</p>
+                    <p class="applied-filter__text">ingrédient</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
                 <div class="applied-filter applied-filter--applience">
-                    <p class="applied-filter__text">Test appareil</p>
+                    <p class="applied-filter__text">appareil</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
                 <div class="applied-filter applied-filter--tool">
-                    <p class="applied-filter__text">Test ustensile</p>
+                    <p class="applied-filter__text">ustensile</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
+            </section>
+            <section id="filters" class="filters">
+                <button id="ingredients-filters-btn" class="filters-btn filters-btn--ingredients" type="button">
+                    <p class="filters-btn__text">Ingrédients</p>
+                    <div id="ingredients-filters-toggle" class="filters-btn-toggle" type="button">
+                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                    </div>
+                </button>
+                <button id="appliences-filters-btn" class="filters-btn filters-btn--appliences" type="button">
+                    <p class="filters-btn__text">Appareils</p>
+                    <div id="appliences-filters-toggle" class="filters-btn-toggle" type="button">
+                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                    </div>
+                </button>
+                <button id="tools-filters-btn" class="filters-btn filters-btn--tools" type="button">
+                    <p class="filters-btn__text">Ustensiles</p>
+                    <div id="tools-filters-toggle" class="filters-btn-toggle" type="button">
+                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                    </div>
+                </button>
             </section>
             <section class="recipies"></section>
         </main>

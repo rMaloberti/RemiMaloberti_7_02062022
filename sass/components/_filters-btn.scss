@@ -1,22 +1,20 @@
-.applied-filter {
+.filters-btn {
     display: flex;
-    align-items: center;
-    gap: .5em;
+    gap: 2em;
 
-    padding: .25em 1em .25em 1.25em;
+    padding: 1.5em 1em;
 
     border-radius: .35em;
 
-
-    &--ingredient {
+    &--ingredients {
         background-color: $blue;
     }
 
-    &--applience {
+    &--appliences {
         background-color: $green;
     }
-    
-    &--tool {
+
+    &--tools {
         background-color: $red;
     }
 
@@ -24,22 +22,24 @@
         font-family: "Lato-bold", sans-serif;
         font-weight: 700;
         color: white;
-        font-size: .8em;
     }
 
-    .remove-filter {
+    .filters-btn-toggle {
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
 
         &__icon {
-            width: 1.75em;
-            height: 1.75em;
-            border: .25em solid transparent;
-            background-image: url("../../assets/icons/remove.svg");
+            width: 1em;
+            height: .5em;
             background-size: cover;
+            background-position: center;
             background-repeat: no-repeat;
+
+            &--closed {
+                background-image: url("../../assets/icons/arrow-down.svg");                
+            }
         }
     }
 }
