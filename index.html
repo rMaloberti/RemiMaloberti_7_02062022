@@ -35,45 +35,166 @@
             </section>
             <section id="applied-filters" class="applied-filters">
                 <div class="applied-filter applied-filter--ingredient">
-                    <p class="applied-filter__text">ingrédient</p>
+                    <p class="applied-filter__text">Ingrédient</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
                 <div class="applied-filter applied-filter--applience">
-                    <p class="applied-filter__text">appareil</p>
+                    <p class="applied-filter__text">Appareil</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
                 <div class="applied-filter applied-filter--tool">
-                    <p class="applied-filter__text">ustensile</p>
+                    <p class="applied-filter__text">Ustensile</p>
                     <button class="remove-filter" type="button">
                         <i class="remove-filter__icon"></i>
                     </button>
                 </div>
             </section>
             <section id="filters" class="filters">
-                <button id="ingredients-filters-btn" class="filters-btn filters-btn--ingredients" type="button">
-                    <p class="filters-btn__text">Ingrédients</p>
-                    <div id="ingredients-filters-toggle" class="filters-btn-toggle" type="button">
-                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                <button id="ingredients-filters-btn" class="filters-btn filters-btn--closed filters-btn--ingredients" type="button">
+                    <div class="filters-btn-header">
+                        <p class="filters-btn-header__text">Ingrédients</p>
+                        <div id="ingredients-filters-toggle" class="filters-btn-toggle" type="button">
+                            <i class="filters-btn-toggle__icon"></i>
+                        </div>
                     </div>
+                    <ul id="ingredients-filters-list" class="filters-btn-list">
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtesttest</li>
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                    </ul>
                 </button>
-                <button id="appliences-filters-btn" class="filters-btn filters-btn--appliences" type="button">
-                    <p class="filters-btn__text">Appareils</p>
-                    <div id="appliences-filters-toggle" class="filters-btn-toggle" type="button">
-                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                <button id="appliences-filters-btn" class="filters-btn filters-btn--closed filters-btn--appliences" type="button">
+                    <div class="filters-btn-header">
+                        <p class="filters-btn-header__text">Appareils</p>
+                        <div id="appliences-filters-toggle" class="filters-btn-toggle" type="button">
+                            <i class="filters-btn-toggle__icon"></i>
+                        </div>
                     </div>
+                    <ul id="appliences-filters-list" class="filters-btn-list">
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtesttest</li>
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                    </ul>
                 </button>
-                <button id="tools-filters-btn" class="filters-btn filters-btn--tools" type="button">
-                    <p class="filters-btn__text">Ustensiles</p>
-                    <div id="tools-filters-toggle" class="filters-btn-toggle" type="button">
-                        <i class="filters-btn-toggle__icon filters-btn-toggle__icon--closed"></i>
+                <button id="tools-filters-btn" class="filters-btn filters-btn--closed filters-btn--tools" type="button">
+                    <div class="filters-btn-header">
+                        <p class="filters-btn-header__text">Ustensiles</p>
+                        <div id="tools-filters-toggle" class="filters-btn-toggle" type="button">
+                            <i class="filters-btn-toggle__icon"></i>
+                        </div>
                     </div>
+                    <ul id="tools-filters-list" class="filters-btn-list">
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtesttest</li>
+                        <li class="filters-btn-list__item">testtesttesttest</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">testtest</li>
+                        <li class="filters-btn-list__item">test</li>
+                        <li class="filters-btn-list__item">test</li>
+                    </ul>
                 </button>
             </section>
-            <section class="recipies"></section>
+            <section class="recipies">
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <img class="recipe-card-thumbnail__img" alt="" src="" />
+                    </div>
+                    <div class="recipe-card-desc">
+                        <div class="card-desc-header">
+                            <h2 class="card-desc-header__heading">Limonade de Coco</h2>
+                            <div class="desc-header-cooking-time">
+                                <i class="desc-header-cooking-time__icon"></i>
+                                <p class="desc-header-cooking-time__text">10 min</p>
+                            </div>
+                        </div>
+                        <div class="card-desc-body">
+                            <ul class="desc-body-ingredients">
+                                <li class="desc-body-ingredient">Lait de coco: <span class="desc-body-ingredient__qty">400ml</span></li>
+                                <li class="desc-body-ingredient">Jus de citron: <span class="desc-body-ingredient__qty">2</span></li>
+                                <li class="desc-body-ingredient">Crême de coco: <span class="desc-body-ingredient__qty">4 cuillères</span></li>
+                                <li class="desc-body-ingredient">Sucre: <span class="desc-body-ingredient__qty">20g</span></li>
+                                <li class="desc-body-ingredient">Glaçons: <span class="desc-body-ingredient__qty">2</span></li>
+                            </ul>
+                            <p class="card-desc-body__instructions">
+                                Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <img class="recipe-card-thumbnail__img" alt="" src="" />
+                    </div>
+                    <div class="recipe-card-desc">
+                        <div class="card-desc-header">
+                            <h2 class="card-desc-header__heading">Limonade de Coco</h2>
+                            <div class="desc-header-cooking-time">
+                                <i class="desc-header-cooking-time__icon"></i>
+                                <p class="desc-header-cooking-time__text">10 min</p>
+                            </div>
+                        </div>
+                        <div class="card-desc-body">
+                            <ul class="desc-body-ingredients">
+                                <li class="desc-body-ingredient">Lait de coco: <span class="desc-body-ingredient__qty">400ml</span></li>
+                                <li class="desc-body-ingredient">Jus de citron: <span class="desc-body-ingredient__qty">2</span></li>
+                                <li class="desc-body-ingredient">Crême de coco: <span class="desc-body-ingredient__qty">4 cuillères</span></li>
+                                <li class="desc-body-ingredient">Sucre: <span class="desc-body-ingredient__qty">20g</span></li>
+                                <li class="desc-body-ingredient">Glaçons: <span class="desc-body-ingredient__qty">2</span></li>
+                            </ul>
+                            <p class="card-desc-body__instructions">
+                                Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="recipe-card">
+                    <div class="recipe-card-thumbnail">
+                        <img class="recipe-card-thumbnail__img" alt="" src="" />
+                    </div>
+                    <div class="recipe-card-desc">
+                        <div class="card-desc-header">
+                            <h2 class="card-desc-header__heading">Limonade de Coco</h2>
+                            <div class="desc-header-cooking-time">
+                                <i class="desc-header-cooking-time__icon"></i>
+                                <p class="desc-header-cooking-time__text">10 min</p>
+                            </div>
+                        </div>
+                        <div class="card-desc-body">
+                            <ul class="desc-body-ingredients">
+                                <li class="desc-body-ingredient">Lait de coco: <span class="desc-body-ingredient__qty">400ml</span></li>
+                                <li class="desc-body-ingredient">Jus de citron: <span class="desc-body-ingredient__qty">2</span></li>
+                                <li class="desc-body-ingredient">Crême de coco: <span class="desc-body-ingredient__qty">4 cuillères</span></li>
+                                <li class="desc-body-ingredient">Sucre: <span class="desc-body-ingredient__qty">20g</span></li>
+                                <li class="desc-body-ingredient">Glaçons: <span class="desc-body-ingredient__qty">2</span></li>
+                            </ul>
+                            <p class="card-desc-body__instructions">
+                                Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre.
+                                Mixer jusqu'à avoir la consistence désirée.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
         <script type="module" src="scripts/index.js"></script>
     </body>

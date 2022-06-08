@@ -1,0 +1,73 @@
+.recipe-card {
+    width: 30%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    .recipe-card-thumbnail {
+        height: 12.5em;
+        border-radius: 0.35em 0.35em 0 0;
+        background-color: $grey;
+    }
+
+    .recipe-card-desc {
+        height: 12.5em;
+        border-radius: 0 0 0.35em 0.35em;
+        background-color: $lightgrey;
+        padding: 1.5em;
+
+        .card-desc-header {
+            display: flex;
+            justify-content: space-between;
+
+            .desc-header-cooking-time {
+                width: 5em;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__icon {
+                    width: 1.75em;
+                    height: 1.75em;
+                    border: 0.25em solid transparent;
+                    background-image: url("../../assets/icons/time.svg");
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+
+                &__text {
+                    font-family: "Lato-bold", sans-serif;
+                    font-weight: 700;
+                }
+            }
+        }
+
+        .card-desc-body {
+            display: flex;
+            justify-content: space-between;
+
+            padding-top: 1em;
+
+            .desc-body-ingredients {
+                max-width: 50%;
+
+                .desc-body-ingredient {
+                    font-size: 0.8em;
+                    font-family: "Lato-bold", sans-serif;
+                    font-weight: 700;
+
+                    &__qty {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+
+            &__instructions {
+                max-width: 50%;
+                font-size: 0.8em;
+            }
+        }
+    }
+}

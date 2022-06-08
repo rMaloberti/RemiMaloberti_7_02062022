@@ -1,10 +1,20 @@
 .filters-btn {
+    min-width: 10em;
+    max-height: 20em;
+    height: fit-content;
     display: flex;
-    gap: 2em;
+    flex-direction: column;
+    gap: 1.5em;
+
+    z-index: 2;
 
     padding: 1.5em 1em;
 
-    border-radius: .35em;
+    border-radius: 0.35em;
+
+    transition: opacity ease-out 1s;
+
+    cursor: pointer;
 
     &--ingredients {
         background-color: $blue;
@@ -18,28 +28,69 @@
         background-color: $red;
     }
 
-    &__text {
-        font-family: "Lato-bold", sans-serif;
-        font-weight: 700;
-        color: white;
+    .filters-btn-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__text {
+            font-family: "Lato-bold", sans-serif;
+            font-weight: 700;
+            color: white;
+        }
+
+        .filters-btn-toggle {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2em;
+
+            &__icon {
+                width: 1em;
+                height: 0.5em;
+
+                background-image: url("../../assets/icons/arrow-down.svg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+
+                transition: transform ease-out 0.3s;
+            }
+        }
     }
 
-    .filters-btn-toggle {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .filters-btn-list {
+        flex-wrap: wrap;
+        column-gap: 1.5em;
+        row-gap: 0.5em;
 
-        &__icon {
-            width: 1em;
-            height: .5em;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        &__item {
+            color: white;
+            text-align: start;
+            width: 10em;
+            min-width: 30%;
+        }
+    }
 
-            &--closed {
-                background-image: url("../../assets/icons/arrow-down.svg");                
-            }
+    &--opened {
+        .filters-btn-header .filters-btn-toggle__icon {
+            transform: rotate(-180deg);
+        }
+
+        .filters-btn-list {
+            display: flex;
+        }
+    }
+
+    &--closed {
+        .filters-btn-header .filters-btn-toggle__icon {
+            transform: rotate(0deg);
+        }
+
+        .filters-btn-list {
+            display: none;
         }
     }
 }
