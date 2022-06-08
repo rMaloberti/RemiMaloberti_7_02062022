@@ -23,16 +23,18 @@
             justify-content: space-between;
 
             .desc-header-cooking-time {
-                width: 4.5em;
+                width: 5em;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
                 &__icon {
-                    width: 1em;
-                    height: 1em;
+                    width: 1.75em;
+                    height: 1.75em;
+                    border: 0.25em solid transparent;
                     background-image: url("../../assets/icons/time.svg");
                     background-size: cover;
+                    background-repeat: no-repeat;
                 }
 
                 &__text {
