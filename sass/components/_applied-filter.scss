@@ -1,25 +1,32 @@
 .applied-filter {
+    /* Display */
     display: flex;
     align-items: center;
     gap: 0.5em;
 
+    /* Margin and padding */
     padding: 0.25em 1em 0.25em 1.25em;
 
+    /* Border */
     border-radius: 0.35em;
 
     &--ingredient {
+        /* Background */
         background-color: $blue;
     }
 
     &--applience {
+        /* Background */
         background-color: $green;
     }
 
     &--tool {
+        /* Background */
         background-color: $red;
     }
 
     &__text {
+        /* Font */
         font-family: "Lato-bold", sans-serif;
         font-weight: 700;
         color: white;
@@ -27,15 +34,23 @@
     }
 
     .remove-filter {
+        /* Display */
         display: flex;
         align-items: center;
         justify-content: center;
+
+        /* Interactivity */
         cursor: pointer;
 
         &__icon {
+            /* Size */
             width: 1.75em;
             height: 1.75em;
+
+            /* Border */
             border: 0.25em solid transparent;
+
+            /* Background */
             background-image: url("../../assets/icons/remove.svg");
             background-size: cover;
             background-repeat: no-repeat;

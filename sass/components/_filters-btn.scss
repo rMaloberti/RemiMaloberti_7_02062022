@@ -1,76 +1,102 @@
 .filters-btn {
+    /* Size */
     min-width: 10em;
     max-height: 20em;
     height: fit-content;
+
+    /* Display */
     display: flex;
     flex-direction: column;
     gap: 1.5em;
 
+    /* Overflow */
     overflow: hidden;
 
+    /* Position */
     z-index: 2;
 
+    /* Margin and padding */
     padding: 1.5em 1em;
 
+    /* Border */
     border-radius: 0.35em;
 
+    /* Transition */
     transition: opacity ease-out 1s;
 
+    /* Interactivity */
     cursor: pointer;
 
     &--ingredients {
+        /* Background */
         background-color: $blue;
     }
 
     &--appliences {
+        /* Background */
         background-color: $green;
     }
 
     &--tools {
+        /* Background */
         background-color: $red;
     }
 
     .filters-btn-header {
+        /* Size */
         width: 100%;
+
+        /* Display */
         display: flex;
         justify-content: space-between;
         align-items: center;
 
         &__text {
+            /* Font */
             font-family: "Lato-bold", sans-serif;
             font-weight: 700;
             color: white;
         }
 
         .filters-btn-toggle {
+            /* Size */
             height: 100%;
+
+            /* Display */
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 2em;
 
             &__icon {
+                /* Size */
                 width: 1em;
                 height: 0.5em;
 
+                /* Background */
                 background-image: url("../../assets/icons/arrow-down.svg");
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
 
+                /* Transition */
                 transition: transform ease-out 0.3s;
             }
         }
     }
 
     .filters-btn-list {
+        /* Display */
         flex-wrap: wrap;
         column-gap: 1.5em;
         row-gap: 0.5em;
 
         &__item {
+            /* Font */
             color: white;
             text-align: start;
+
+            /* Size */
             width: 10em;
             min-width: 30%;
         }
@@ -78,20 +104,24 @@
 
     &--opened {
         .filters-btn-header .filters-btn-toggle__icon {
+            /* Transform */
             transform: rotate(-180deg);
         }
 
         .filters-btn-list {
+            /* Display */
             display: flex;
         }
     }
 
     &--closed {
         .filters-btn-header .filters-btn-toggle__icon {
+            /* Transform */
             transform: rotate(0deg);
         }
 
         .filters-btn-list {
+            /* Display */
             display: none;
         }
     }
