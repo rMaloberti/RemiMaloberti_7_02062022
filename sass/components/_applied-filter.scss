@@ -1,12 +1,11 @@
 .applied-filter {
     display: flex;
     align-items: center;
-    gap: .5em;
+    gap: 0.5em;
 
-    padding: .25em 1em .25em 1.25em;
+    padding: 0.25em 1em 0.25em 1.25em;
 
-    border-radius: .35em;
-
+    border-radius: 0.35em;
 
     &--ingredient {
         background-color: $blue;
@@ -15,7 +14,7 @@
     &--applience {
         background-color: $green;
     }
-    
+
     &--tool {
         background-color: $red;
     }
@@ -24,7 +23,7 @@
         font-family: "Lato-bold", sans-serif;
         font-weight: 700;
         color: white;
-        font-size: .8em;
+        font-size: 0.8em;
     }
 
     .remove-filter {
@@ -36,7 +35,7 @@
         &__icon {
             width: 1.75em;
             height: 1.75em;
-            border: .25em solid transparent;
+            border: 0.25em solid transparent;
             background-image: url("../../assets/icons/remove.svg");
             background-size: cover;
             background-repeat: no-repeat;
