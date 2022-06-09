@@ -52,12 +52,16 @@ export default class BtnHelper {
     /* Filter type */
     const filterType = filter.parentElement.parentElement.id.split('-')[0];
 
-    /* Applied filter */
-    const appliedFilter = Components.appliedFilter({ type: filterType, filter: filterText });
+    /* Event handling */
+    e.stopPropagation();
+    filter.removeEventListener('click', this.addFilter);
 
     /* DOM updates */
     /* Applied filters section */
     const appliedFiltersSection = document.getElementById('applied-filters');
+
+    /* Applied filter */
+    const appliedFilter = Components.appliedFilter({ type: filterType, filter: filterText });
 
     if (!appliedFiltersSection.hasChildNodes()) {
       appliedFiltersSection.classList.remove('applied-filters--empty');
@@ -65,5 +69,49 @@ export default class BtnHelper {
 
     appliedFiltersSection.appendChild(appliedFilter);
     filter.parentElement.parentElement.removeChild(filter.parentElement);
+  };
+
+  // REMOVE FILTER
+  static removeFilter = (e) => {
+    /* Remove button */
+    const removeBtn = e.currentTarget;
+
+    /* Event handling */
+    e.stopPropagation();
+    removeBtn.removeEventListener('click', this.removeFilter);
+
+    /* DOM updates */
+    /* Applied filters section */
+    const appliedFiltersSection = document.getElementById('applied-filters');
+
+    /* Applied filter */
+    const appliedFilter = removeBtn.parentElement;
+
+    /* Applied filter text */
+    const appliedFilterText = appliedFilter.querySelector('p').textContent;
+
+    /* Filter type */
+    const filterType = appliedFilter.getAttribute('class').split('--')[1];
+
+    /* Filters button list */
+    const filtersBtnList = document.getElementById(`${filterType}-filters-list`);
+
+    /* List item */
+    const listItem = document.createElement('li');
+    listItem.classList.add('filters-btn-list-item');
+
+    /* List item text */
+    const listItemText = document.createElement('p');
+    listItemText.classList.add('filters-btn-list-item__text');
+    listItemText.textContent = appliedFilterText;
+
+    /* Event listeners */
+    listItemText.addEventListener('click', this.addFilter);
+
+    listItem.appendChild(listItemText);
+    /* END List item */
+
+    filtersBtnList.appendChild(listItem);
+    appliedFiltersSection.removeChild(appliedFilter);
   };
 }
