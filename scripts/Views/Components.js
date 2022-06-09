@@ -1,6 +1,7 @@
 /* eslint-disable import/extensions */
 // IMPORTS
 import FilterTypes from '../utils/FilterTypes.js';
+import BtnHelper from '../utils/BtnHelper.js';
 
 // COMPONENTS
 export default class Components {
@@ -63,6 +64,14 @@ export default class Components {
     headerText.textContent = FilterTypes.filterTitle({ type });
     /* END Header text */
 
+    /* Filters search */
+    const filtersSearch = document.createElement('input');
+    filtersSearch.id = `${type}-filters-search`;
+    filtersSearch.classList.add('filters-btn-header__textfield');
+    filtersSearch.setAttribute('type', 'text');
+    filtersSearch.setAttribute('placeholder', `Rechercher un ${FilterTypes.filterSearch({ type })}`);
+    /* END Button textfield */
+
     /* Button toggle */
     const btnToggle = document.createElement('div');
     btnToggle.id = `${type}-filters-toggle`;
@@ -77,6 +86,7 @@ export default class Components {
     /* END Button toggle */
 
     btnHeader.appendChild(headerText);
+    btnHeader.appendChild(filtersSearch);
     btnHeader.appendChild(btnToggle);
     /* END Component header */
 
@@ -99,6 +109,9 @@ export default class Components {
     filtersBtn.appendChild(btnHeader);
     filtersBtn.appendChild(filtersList);
     /* END Component wrapper */
+
+    /* Event listeners */
+    filtersBtn.addEventListener('click', BtnHelper.expandFiltersBtn);
 
     return filtersBtn;
   };

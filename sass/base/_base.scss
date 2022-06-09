@@ -2,57 +2,60 @@
 *,
 *::after,
 *::before {
-    /* Margin and padding */
-    margin: 0;
-    padding: 0;
+  /* Margin and padding */
+  margin: 0;
+  padding: 0;
 
-    /* Box sizing */
-    box-sizing: inherit;
+  /* Box sizing */
+  box-sizing: inherit;
 
-    /* Fonts */
-    font-family: "Lato-regular", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+  /* Fonts */
+  font-family: 'Lato-regular', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
 body {
-    /* Box-sizing */
-    box-sizing: border-box;
+  /* Box-sizing */
+  box-sizing: border-box;
 
-    /* Size */
-    width: 85vw;
-    min-height: 100vh;
+  /* Size */
+  width: 85vw;
+  min-height: 100vh;
 
-    /* Display */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* Display */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    /* Margin and padding */
-    margin: 0 auto;
+  /* Margin and padding */
+  margin: 0 auto;
 }
 
 ul {
-    /* List style */
-    list-style: none;
+  /* List style */
+  list-style: none;
 }
 
 button {
-    /* Border */
-    border: none;
+  /* Border */
+  border: none;
 
-    /* Background */
-    background-color: transparent;
+  /* Background */
+  background-color: transparent;
 }
 
 fieldset,
 input {
-    /* Border */
-    border: transparent;
-    border-radius: 0.35em;
+  /* Border */
+  border: transparent;
+  border-radius: 0.35em;
+
+  /* Background */
+  background: transparent;
 }
 
 input:focus {
-    /* Border */
-    outline: none;
+  /* Border */
+  outline: none;
 }

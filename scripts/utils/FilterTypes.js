@@ -24,4 +24,30 @@ export default class FilterTypes {
 
     return title;
   };
+
+  /* Filter search */
+  static filterSearch = (data) => {
+    /* Filter type */
+    const { type } = data;
+
+    /* Filter title */
+    let text;
+
+    /* Set the right title */
+    switch (type) {
+      case 'ingredients':
+        text = 'ingrédient';
+        break;
+      case 'appliences':
+        text = 'appareil';
+        break;
+      case 'tools':
+        text = 'ustensile';
+        break;
+      default:
+        break;
+    }
+
+    return text;
+  };
 }
