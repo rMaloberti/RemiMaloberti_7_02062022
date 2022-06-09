@@ -1,8 +1,12 @@
 .logo {
+    /* Size */
     height: fit-content;
+
+    /* Margin and padding */
     padding: 2em 0 1em 0;
 
     &__img {
+        /* Size */
         width: 15em;
     }
 }

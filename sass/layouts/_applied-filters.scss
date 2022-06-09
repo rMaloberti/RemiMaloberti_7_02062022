@@ -1,6 +1,12 @@
 .applied-filters {
-    display: flex;
-    gap: 1em;
+  /* Display */
+  display: flex;
+  gap: 1em;
 
-    padding-top: 0.5em;
+  /* Margin and padding */
+  padding-top: 0.5em;
+
+  &--empty {
+    display: none;
+  }
 }

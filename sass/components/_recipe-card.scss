@@ -1,43 +1,69 @@
 .recipe-card {
-    width: 30%;
+    /* Size */
+    width: 31.5%;
     height: fit-content;
+
+    /* Display */
     display: flex;
     flex-direction: column;
 
+    /* Overflow */
     overflow: hidden;
 
     .recipe-card-thumbnail {
+        /* Size */
         height: 12.5em;
+
+        /* Border */
         border-radius: 0.35em 0.35em 0 0;
+
+        /* Background */
         background-color: $grey;
     }
 
     .recipe-card-desc {
+        /* Size */
         height: 12.5em;
+
+        /* Border */
         border-radius: 0 0 0.35em 0.35em;
+
+        /* Background */
         background-color: $lightgrey;
+
+        /* Margin and padding */
         padding: 1.5em;
 
         .card-desc-header {
+            /* Display */
             display: flex;
             justify-content: space-between;
 
             .desc-header-cooking-time {
+                /* Size */
                 width: 5em;
+
+                /* Display */
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
                 &__icon {
+                    /* Size */
                     width: 1.75em;
                     height: 1.75em;
+
+                    /* Border */
                     border: 0.25em solid transparent;
+
+                    /* Background */
                     background-image: url("../../assets/icons/time.svg");
                     background-size: cover;
                     background-repeat: no-repeat;
                 }
 
                 &__text {
+                    /* Font */
                     font-family: "Lato-bold", sans-serif;
                     font-weight: 700;
                 }
@@ -45,27 +71,35 @@
         }
 
         .card-desc-body {
+            /* Display */
             display: flex;
             justify-content: space-between;
 
+            /* Margin and padding */
             padding-top: 1em;
 
             .desc-body-ingredients {
-                max-width: 50%;
+                /* Size */
+                max-width: 49%;
 
                 .desc-body-ingredient {
+                    /* Font */
                     font-size: 0.8em;
                     font-family: "Lato-bold", sans-serif;
                     font-weight: 700;
 
                     &__qty {
+                        /* Font */
                         font-size: 0.8em;
                     }
                 }
             }
 
             &__instructions {
-                max-width: 50%;
+                /* Size */
+                max-width: 49%;
+
+                /* Font */
                 font-size: 0.8em;
             }
         }
