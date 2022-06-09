@@ -1,26 +1,32 @@
 {
-    "name": "remimaloberti_7_02062022",
-    "version": "1.0.0",
-    "description": "Project 7 of the OpenClassrooms Front-End path.",
-    "main": "index.js",
-    "scripts": {
-        "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
-        "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/rMaloberti/RemiMaloberti_7_02062022.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/rMaloberti/RemiMaloberti_7_02062022/issues"
-    },
-    "homepage": "https://github.com/rMaloberti/RemiMaloberti_7_02062022#readme",
-    "dependencies": {
-        "autoprefixer": "^10.4.7",
-        "postcss": "^8.4.14",
-        "postcss-cli": "^9.1.0",
-        "sass": "^1.52.2"
-    }
+  "name": "remimaloberti_7_02062022",
+  "version": "1.0.0",
+  "description": "Project 7 of the OpenClassrooms Front-End path.",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css --style compressed",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/",
+    "lint": "eslint scripts/**"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rMaloberti/RemiMaloberti_7_02062022.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rMaloberti/RemiMaloberti_7_02062022/issues"
+  },
+  "homepage": "https://github.com/rMaloberti/RemiMaloberti_7_02062022#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "sass": "^1.52.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0"
+  }
 }
