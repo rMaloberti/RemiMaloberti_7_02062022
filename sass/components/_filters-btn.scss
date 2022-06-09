@@ -107,18 +107,29 @@
     column-gap: 1.5em;
     row-gap: 0.5em;
 
-    &__item {
-      /* Font */
-      color: white;
-      text-align: start;
-
+    &-item {
       /* Size */
-      width: 10em;
+      width: 9em;
       min-width: 30%;
+
+      &__text {
+        /* Size */
+        width: fit-content;
+
+        /* Font */
+        color: white;
+        text-align: start;
+
+        /* Interactivity */
+        cursor: pointer;
+      }
     }
   }
 
   &--opened {
+    /* Interactivity */
+    cursor: initial;
+
     .filters-btn-header__text {
       /* Display */
       display: none;
@@ -127,6 +138,11 @@
     .filters-btn-header__textfield {
       /* Display */
       display: initial;
+    }
+
+    .filters-btn-header .filters-btn-toggle {
+      /* Interactivity */
+      cursor: pointer;
     }
 
     .filters-btn-header .filters-btn-toggle__icon {

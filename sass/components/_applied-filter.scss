@@ -1,59 +1,59 @@
 .applied-filter {
+  /* Display */
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  /* Margin and padding */
+  padding: 0.25em 1em 0.25em 1.25em;
+
+  /* Border */
+  border-radius: 0.35em;
+
+  &--ingredients {
+    /* Background */
+    background-color: $blue;
+  }
+
+  &--appliences {
+    /* Background */
+    background-color: $green;
+  }
+
+  &--tools {
+    /* Background */
+    background-color: $red;
+  }
+
+  &__text {
+    /* Font */
+    font-family: 'Lato-bold', sans-serif;
+    font-weight: 700;
+    color: white;
+    font-size: 0.8em;
+  }
+
+  .remove-filter {
     /* Display */
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    justify-content: center;
 
-    /* Margin and padding */
-    padding: 0.25em 1em 0.25em 1.25em;
+    /* Interactivity */
+    cursor: pointer;
 
-    /* Border */
-    border-radius: 0.35em;
+    &__icon {
+      /* Size */
+      width: 1.75em;
+      height: 1.75em;
 
-    &--ingredient {
-        /* Background */
-        background-color: $blue;
+      /* Border */
+      border: 0.25em solid transparent;
+
+      /* Background */
+      background-image: url('../../assets/icons/remove.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
     }
-
-    &--applience {
-        /* Background */
-        background-color: $green;
-    }
-
-    &--tool {
-        /* Background */
-        background-color: $red;
-    }
-
-    &__text {
-        /* Font */
-        font-family: "Lato-bold", sans-serif;
-        font-weight: 700;
-        color: white;
-        font-size: 0.8em;
-    }
-
-    .remove-filter {
-        /* Display */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        /* Interactivity */
-        cursor: pointer;
-
-        &__icon {
-            /* Size */
-            width: 1.75em;
-            height: 1.75em;
-
-            /* Border */
-            border: 0.25em solid transparent;
-
-            /* Background */
-            background-image: url("../../assets/icons/remove.svg");
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-    }
+  }
 }

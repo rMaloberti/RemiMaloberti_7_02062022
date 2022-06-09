@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 // IMPORTS
 import FilterTypes from '../utils/FilterTypes.js';
@@ -98,8 +99,17 @@ export default class Components {
     filters.forEach((filter) => {
       /* List item */
       const listItem = document.createElement('li');
-      listItem.classList.add('filters-btn-list__item');
-      listItem.textContent = filter;
+      listItem.classList.add('filters-btn-list-item');
+
+      /* List item text */
+      const listItemText = document.createElement('p');
+      listItemText.classList.add('filters-btn-list-item__text');
+      listItemText.textContent = filter;
+
+      /* Event listeners */
+      listItemText.addEventListener('click', BtnHelper.addFilter);
+
+      listItem.appendChild(listItemText);
       /* END List item */
 
       filtersList.append(listItem);
