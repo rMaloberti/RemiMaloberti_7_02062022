@@ -1,21 +1,25 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
-import Components from './views/Components.js';
+import ComponentsView from './views/ComponentsView.js';
 
 const init = () => {
   document
     .getElementById('filters')
-    .appendChild(Components.filtersBtn({ type: 'ingredients', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] }));
+    .appendChild(
+      ComponentsView.filtersBtn({ type: 'ingredients', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] })
+    );
   document
     .getElementById('filters')
-    .appendChild(Components.filtersBtn({ type: 'appliences', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] }));
+    .appendChild(
+      ComponentsView.filtersBtn({ type: 'appliences', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] })
+    );
   document
     .getElementById('filters')
-    .appendChild(Components.filtersBtn({ type: 'tools', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] }));
+    .appendChild(ComponentsView.filtersBtn({ type: 'tools', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] }));
 
   for (let i = 0; i < 10; i += 1) {
     document.getElementById('recipes').appendChild(
-      Components.recipeCard({
+      ComponentsView.recipeCard({
         recipeId: 1,
         recipeTitle: 'Limonade de Coco',
         recipeTime: 10,
