@@ -19,4 +19,19 @@ export default class StringHelper {
 
     return normalizedString;
   };
+
+  // GET RECIPE BY ID
+  static getRecipeById = (recipes, id) => {
+    // Recipe to return
+    let recipe;
+
+    // Get the right recipe depending on the id
+    recipes.forEach((recip) => {
+      if (recip.id === id) {
+        recipe = recip;
+      }
+    });
+
+    return recipe;
+  };
 }
