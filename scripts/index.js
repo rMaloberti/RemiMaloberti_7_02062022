@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
+import RecipesModel from './models/RecipesModel.js';
 import ComponentsView from './views/ComponentsView.js';
 
 const init = () => {
@@ -52,6 +53,8 @@ const init = () => {
       })
     );
   }
+
+  console.log(RecipesModel.getFilterReferences(RecipesModel.getRecipes()));
 };
 
 init();
