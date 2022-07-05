@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 /* eslint-disable import/no-cycle */
 // IMPORTS
-import Components from '../views/Components.js';
+import ComponentsView from '../views/ComponentsView.js';
 
 // BUTTON HELPER
 export default class BtnHelper {
@@ -61,7 +61,7 @@ export default class BtnHelper {
     const appliedFiltersSection = document.getElementById('applied-filters');
 
     /* Applied filter */
-    const appliedFilter = Components.appliedFilter({ type: filterType, filter: filterText });
+    const appliedFilter = ComponentsView.appliedFilter({ type: filterType, filter: filterText });
 
     if (!appliedFiltersSection.hasChildNodes()) {
       appliedFiltersSection.classList.remove('applied-filters--empty');

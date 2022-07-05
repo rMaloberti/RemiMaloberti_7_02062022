@@ -4,7 +4,7 @@
 import FilterTypes from '../utils/FilterTypes.js';
 import BtnHelper from '../utils/BtnHelper.js';
 
-// COMPONENTS
+// COMPONENTS VIEW
 export default class ComponentsView {
   // APPLIED FILTER
   static appliedFilter = (data) => {
