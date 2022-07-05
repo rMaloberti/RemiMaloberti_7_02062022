@@ -1,22 +1,26 @@
 /* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
-import RecipesModel from './models/RecipesModel.js';
 import ComponentsView from './views/ComponentsView.js';
 
 const init = () => {
-  document
-    .getElementById('filters')
-    .appendChild(
-      ComponentsView.filtersBtn({ type: 'ingredients', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] })
-    );
-  document
-    .getElementById('filters')
-    .appendChild(
-      ComponentsView.filtersBtn({ type: 'appliences', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] })
-    );
-  document
-    .getElementById('filters')
-    .appendChild(ComponentsView.filtersBtn({ type: 'tools', filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'] }));
+  document.getElementById('filters').appendChild(
+    ComponentsView.filtersBtn({
+      type: 'ingredients',
+      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
+    })
+  );
+  document.getElementById('filters').appendChild(
+    ComponentsView.filtersBtn({
+      type: 'appliences',
+      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
+    })
+  );
+  document.getElementById('filters').appendChild(
+    ComponentsView.filtersBtn({
+      type: 'tools',
+      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
+    })
+  );
 
   for (let i = 0; i < 10; i += 1) {
     document.getElementById('recipes').appendChild(
@@ -53,8 +57,6 @@ const init = () => {
       })
     );
   }
-
-  console.log(RecipesModel.getFilterReferences(RecipesModel.getRecipes()));
 };
 
 init();
