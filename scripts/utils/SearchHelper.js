@@ -12,7 +12,7 @@ export default class StringHelper {
     normalizedString = normalizedString.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
     // Remove spaces and special characters
-    normalizedString = normalizedString.replace(/([^\w]+|\s+)/g, '-');
+    normalizedString = normalizedString.replace(/([^\w^%]+|\s+)/g, '-');
 
     // Remove hyphens at the start and at the end of the string
     normalizedString = normalizedString.replace(/(^-+|-+$)/g, '');
@@ -23,15 +23,15 @@ export default class StringHelper {
   // GET RECIPE BY ID
   static getRecipeById = (recipes, id) => {
     // Recipe to return
-    let recipe;
+    let returnRecipe;
 
     // Get the right recipe depending on the id
-    recipes.forEach((recip) => {
-      if (recip.id === id) {
-        recipe = recip;
+    recipes.forEach((recipe) => {
+      if (recipe.id === id) {
+        returnRecipe = recipe;
       }
     });
 
-    return recipe;
+    return returnRecipe;
   };
 }
