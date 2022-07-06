@@ -34,6 +34,7 @@ export default class RecipesModel {
       // Store the ingredient in the reference array
       references[subArrayIndex].push({
         value: SearchHelper.normalize(referenceToStore),
+        displayValue: referenceToStore,
         recipeIds: [recipe.id],
       });
     }

@@ -2,26 +2,13 @@
 /* eslint-disable import/extensions */
 import RecipesModel from './models/RecipesModel.js';
 import ComponentsView from './views/ComponentsView.js';
+import HomeView from './views/HomeView.js';
 
 const init = () => {
-  document.getElementById('filters').appendChild(
-    ComponentsView.filtersBtn({
-      type: 'ingredients',
-      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
-    })
-  );
-  document.getElementById('filters').appendChild(
-    ComponentsView.filtersBtn({
-      type: 'appliences',
-      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
-    })
-  );
-  document.getElementById('filters').appendChild(
-    ComponentsView.filtersBtn({
-      type: 'tools',
-      filters: ['test', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'],
-    })
-  );
+  const recipes = RecipesModel.getRecipes();
+  const references = RecipesModel.getReferences(recipes);
+
+  HomeView.displayPage(recipes, references);
 
   for (let i = 0; i < 10; i += 1) {
     document.getElementById('recipes').appendChild(

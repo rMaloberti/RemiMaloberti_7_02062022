@@ -32,7 +32,7 @@
     background-color: $blue;
   }
 
-  &--appliences {
+  &--appliances {
     /* Background */
     background-color: $green;
   }
@@ -122,6 +122,9 @@
 
         /* Interactivity */
         cursor: pointer;
+
+        /* Overflow */
+        white-space: nowrap;
       }
     }
   }
@@ -129,6 +132,7 @@
   &--opened {
     /* Interactivity */
     cursor: initial;
+    overflow: scroll;
 
     .filters-btn-header__text {
       /* Display */
