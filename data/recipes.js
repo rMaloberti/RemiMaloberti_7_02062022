@@ -262,7 +262,7 @@ const recipes = [
     description:
       "Etaler la pate dans les moules à tartelette. Faire cuire la pate 30 minutes. Découper le chocolat en morceau et le faire chauffer, y ajouter la crême liquide, ajouter le beurre et remuer jusqu'à avoir une pâte homogène. Verser la pate sur les tartelettes. Couper les fraises en 2 et les positionner sur ",
     appliance: 'Four',
-    ustensils: ['moule à tartelettes (6)', 'casserolle'],
+    ustensils: ['moule à tartelettes', 'casserolle'],
   },
   {
     id: 8,
@@ -765,7 +765,7 @@ const recipes = [
     time: 30,
     description:
       'Cuisiner la viande hachée dans une poelle à frire. Dans une autre faire cuire les oignons découpés en fins dés avec un peu de beurre. Ajouter du vin rouge. Mélanger les oigons avec la viande hachée. Faire cuire les pates le temps indiqué sur le paquet. Ajouter le coulis de tomates à la viande hachée. Une fois que les pates sont cuites, ajouter la crème fraiche à la viande hachée. Serivir.',
-    appliance: 'Casserolle.',
+    appliance: 'Casserole',
     ustensils: ['Cuillère en bois', 'louche', 'couteau'],
   },
   {
@@ -985,7 +985,7 @@ const recipes = [
     time: 15,
     description:
       "Faire fondre l'oseille avec du beurre demi sel, ajouter un litre d'eau. Ajouter les vermicelles. Laisser cuire. une foit prêt, sortir du feu et après 5 minutes ajouter le jaune d'oeuf et la crême fraîche",
-    appliance: 'Casserolle',
+    appliance: 'Casserole',
     ustensils: ['couteau', 'cuillère en bois'],
   },
   {
@@ -1370,7 +1370,8 @@ const recipes = [
       },
     ],
     time: 20,
-    description: 'Fouettez les oeufs, le sucre et le lait. tremper les tranches de pain. Le cuire au four pendant environ 10 minutes à 180°. Servir',
+    description:
+      'Fouettez les oeufs, le sucre et le lait. tremper les tranches de pain. Le cuire au four pendant environ 10 minutes à 180°. Servir',
     appliance: 'Four',
     ustensils: ['fouet', 'bol', 'Cuillère à Soupe'],
   },
@@ -1459,7 +1460,7 @@ const recipes = [
     time: 20,
     description:
       "Séparer les blancs d'oeufs. Faire fondre le chocolat au bain marie. Ajouter les jaunes et le sucre au chocolat hors du feu. Battre les blancs en neige. Ajouter les blancs au mélange de chocolat. Mélangez délicatement avec une spatule. Servir dans un plat ou dans des verres. Mettre au frais",
-    appliance: 'Casserolle',
+    appliance: 'Casserole',
     ustensils: ['fouet', 'spatule', 'verres'],
   },
   {
@@ -1560,7 +1561,7 @@ const recipes = [
     time: 15,
     description:
       'Mélanger la farine et le beurre fondu en ajoutant le lait peu à peu. Ajouter du sucre après la cuisson. Bien mélanger. Ajouter le chocolat en morceaux et laisser chauffer 8 minutes en mélangeant avec une cuillère en bois. Mettre dans des verres',
-    appliance: 'Casserolle',
+    appliance: 'Casserole',
     ustensils: ['cuillère en bois'],
   },
   {
@@ -1591,7 +1592,7 @@ const recipes = [
     time: 30,
     description:
       "Faire bouillir le lait ( on peut y ajouter de l'essence de vanille. Battre les oeufs et le sucre, ajouter la farine puis finalement ajouter le lait chaud. Remettre à feu doux pour faire épaissir en remuant pendant 5 à 10 minutes.",
-    appliance: 'Casserolle',
+    appliance: 'Casserole',
     ustensils: ['fouet', 'saladier'],
   },
   {
@@ -1732,7 +1733,8 @@ const recipes = [
       },
     ],
     time: 0,
-    description: "Découper les fruits. Le passer au blender jusqu'à obtenir une texture liquide. Mettre au frais. Servir",
+    description:
+      "Découper les fruits. Le passer au blender jusqu'à obtenir une texture liquide. Mettre au frais. Servir",
     appliance: 'Blender',
     ustensils: ['couteau', 'verres'],
   },

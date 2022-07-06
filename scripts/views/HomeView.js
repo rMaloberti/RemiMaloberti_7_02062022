@@ -34,8 +34,8 @@ export default class HomeView {
     );
 
     // Fill and display the ustensils button
-    references[3].forEach((reference) => {
-      filterReferences[2].push(reference.displayPage);
+    references[4].forEach((reference) => {
+      filterReferences[2].push(reference.displayValue);
     });
 
     document.getElementById('filters').appendChild(
@@ -46,8 +46,24 @@ export default class HomeView {
     );
   };
 
+  // DISPLAY RECIPES
+  static displayRecipes = (recipes) => {
+    recipes.forEach((recipe) => {
+      document.getElementById('recipes').appendChild(
+        ComponentsView.recipeCard({
+          recipeId: recipe.id,
+          recipeTitle: recipe.name,
+          recipeTime: recipe.time,
+          recipeIngredients: recipe.ingredients,
+          recipeDesc: recipe.description,
+        })
+      );
+    });
+  };
+
   // DISPLAY PAGE
   static displayPage = (recipes, references) => {
     this.displayFilters(references);
+    this.displayRecipes(recipes);
   };
 }
