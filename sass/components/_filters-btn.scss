@@ -132,7 +132,6 @@
   &--opened {
     /* Interactivity */
     cursor: initial;
-    overflow: scroll;
 
     .filters-btn-header__text {
       /* Display */
@@ -157,6 +156,9 @@
     .filters-btn-list {
       /* Display */
       display: flex;
+
+      /* Overflow */
+      overflow: scroll;
     }
   }
 
