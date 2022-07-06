@@ -12,7 +12,7 @@ export default class FilterTypes {
       case 'ingredients':
         title = 'Ingrédients';
         break;
-      case 'appliences':
+      case 'appliances':
         title = 'Appareils';
         break;
       case 'tools':
@@ -38,7 +38,7 @@ export default class FilterTypes {
       case 'ingredients':
         text = 'ingrédient';
         break;
-      case 'appliences':
+      case 'appliances':
         text = 'appareil';
         break;
       case 'tools':

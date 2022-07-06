@@ -1,7 +1,8 @@
 .recipes {
   /* Display */
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  column-gap: 2.75%;
   row-gap: 4em;
 }

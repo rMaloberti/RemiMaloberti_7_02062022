@@ -31,9 +31,16 @@ export default class RecipesModel {
 
     // If the ingredient is not in the ingredient references array
     if (!stored) {
+      // Display value to store
+      const displayValueToStore = `${referenceToStore
+        .toLowerCase()
+        .charAt(0)
+        .toUpperCase()}${referenceToStore.toLowerCase().slice(1)}`;
+
       // Store the ingredient in the reference array
       references[subArrayIndex].push({
         value: SearchHelper.normalize(referenceToStore),
+        displayValue: displayValueToStore,
         recipeIds: [recipe.id],
       });
     }
