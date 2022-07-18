@@ -22,9 +22,9 @@ const init = () => {
   HomeView.displayPage(recipes, references);
 
   // Event listeners
-  document.querySelectorAll('input[type=search]').forEach((searchBar) => {
-    searchBar.addEventListener('input', SearchHelper.searchHandler);
-  });
+  document
+    .getElementsByClassName('main-search-bar')
+    .addEventListener('input', SearchHelper.searchHandler);
 };
 
 init();
