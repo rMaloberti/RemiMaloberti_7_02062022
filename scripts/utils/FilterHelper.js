@@ -1,4 +1,4 @@
-export default class FilterTypes {
+export default class FilterHelper {
   /* Filter title */
   static filterTitle = (data) => {
     /* Filter type */

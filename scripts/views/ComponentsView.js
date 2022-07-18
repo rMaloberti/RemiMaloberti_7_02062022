@@ -2,7 +2,7 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 // IMPORTS
-import FilterTypes from '../utils/FilterTypes.js';
+import FilterHelper from '../utils/FilterHelper.js';
 import BtnHelper from '../utils/BtnHelper.js';
 
 // COMPONENTS VIEW
@@ -65,7 +65,7 @@ export default class ComponentsView {
     /* Header text */
     const headerText = document.createElement('p');
     headerText.classList.add('filters-btn-header__text');
-    headerText.textContent = FilterTypes.filterTitle({ type });
+    headerText.textContent = FilterHelper.filterTitle({ type });
     /* END Header text */
 
     /* Filters search */
@@ -75,7 +75,7 @@ export default class ComponentsView {
     filtersSearch.setAttribute('type', 'search');
     filtersSearch.setAttribute(
       'placeholder',
-      `Rechercher un ${FilterTypes.filterSearch({ type })}`
+      `Rechercher un ${FilterHelper.filterSearch({ type })}`
     );
     /* END Button textfield */
 
