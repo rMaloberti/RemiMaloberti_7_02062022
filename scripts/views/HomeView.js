@@ -73,11 +73,14 @@ export default class HomeView {
   };
 
   // RELOAD PAGE
-  static reloadPage = (recipes) => {
-    // Clear the recipes container
-    document.getElementById('recipes').removeChildren();
+  static reloadPage = (recipes, references) => {
+    // Clear the filters container
+    document.getElementById('filters').innerHTML = '';
 
-    // Display recipes
-    this.displayRecipes(recipes);
+    // Clear the recipes container
+    document.getElementById('recipes').innerHTML = '';
+
+    // Display page
+    this.displayPage(recipes, references);
   };
 }

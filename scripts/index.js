@@ -4,14 +4,17 @@ import RecipesModel from './models/RecipesModel.js';
 import HomeView from './views/HomeView.js';
 import SearchHelper from './utils/SearchHelper.js';
 
+// BASE RECIPES ARRAY
+const baseRecipes = RecipesModel.getRecipes();
+
 // RECIPES ARRAY
 let recipes;
 
 // REFERENCES ARRAY
 let references;
 
-// ISALREADYFILTERED TOGGLE
-let isAlreadyFiltered = false;
+// ISMAINSEARCHAPPLIED TOGGLE
+let isMainSearchApplied = false;
 
 // MAIN SEARCH BAR
 const mainSearchBar = document.getElementById('main-search-bar');
@@ -22,12 +25,25 @@ const mainSearchBtn = document.getElementById('main-search-btn');
 // CALL THE MAIN SEARCH HANDLER
 const callMainSearchHandler = (value) => {
   // Toggle to know if the recipes array is filtered after calling the seearch handler
-  const isFilteredAfterHandler = SearchHelper.mainSearchHandler(value, isAlreadyFiltered);
+  const { isRecipesFiltered, hasRecipesChanged, filteredRecipes } = SearchHelper.mainSearchHandler(
+    value,
+    isMainSearchApplied,
+    baseRecipes
+  );
 
-  // Update the isAlreadyFiltered toggle
-  isAlreadyFiltered = isFilteredAfterHandler;
+  // Update the isMainSearchApplied toggle
+  isMainSearchApplied = isRecipesFiltered;
 
-  console.log(isAlreadyFiltered);
+  if (hasRecipesChanged) {
+    // Update the recipes array
+    recipes = filteredRecipes;
+
+    // Update the references array
+    references = RecipesModel.getReferences(recipes);
+
+    // Reload the page
+    HomeView.reloadPage(recipes, references);
+  }
 };
 
 // INIT

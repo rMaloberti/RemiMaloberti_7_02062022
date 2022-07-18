@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+
 // STRING HELPER
 export default class StringHelper {
   // NORMALIZE
@@ -35,22 +37,38 @@ export default class StringHelper {
     return returnRecipe;
   };
 
+  // FILTER RECIPES
+  static filterRecipes = (recipes, recipesIds) => {
+    // Filtered recipes
+    const filteredRecipes = recipes.filter((recipe) => recipesIds.includes(recipe.id));
+
+    return filteredRecipes;
+  };
+
   // SEARCH HANDLER
-  static mainSearchHandler = (value, isAlreadyFiltered) => {
+  static mainSearchHandler = (value, isMainSearchApplied, recipes) => {
     // Search bar value
     const searchBarValue = this.normalize(value);
 
     // isRecipesFiltered toggle
-    let isRecipesFiltered = isAlreadyFiltered;
+    let isRecipesFiltered = isMainSearchApplied;
+
+    // hasRecipesChanged toggle
+    let hasRecipesChanged = true;
+
+    // Filtered recipes array
+    let filteredRecipes;
 
     if (searchBarValue.length > 2) {
-      console.log(searchBarValue);
+      filteredRecipes = this.filterRecipes(recipes, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
       isRecipesFiltered = true;
-    } else if (isAlreadyFiltered) {
-      console.log(searchBarValue);
+    } else if (isMainSearchApplied) {
+      filteredRecipes = this.filterRecipes(recipes, [1, 2, 4]);
       isRecipesFiltered = false;
+    } else {
+      hasRecipesChanged = false;
     }
 
-    return isRecipesFiltered;
+    return { isRecipesFiltered, hasRecipesChanged, filteredRecipes };
   };
 }
