@@ -34,4 +34,23 @@ export default class StringHelper {
 
     return returnRecipe;
   };
+
+  // SEARCH HANDLER
+  static mainSearchHandler = (value, isAlreadyFiltered) => {
+    // Search bar value
+    const searchBarValue = this.normalize(value);
+
+    // isRecipesFiltered toggle
+    let isRecipesFiltered = isAlreadyFiltered;
+
+    if (searchBarValue.length > 2) {
+      console.log(searchBarValue);
+      isRecipesFiltered = true;
+    } else if (isAlreadyFiltered) {
+      console.log(searchBarValue);
+      isRecipesFiltered = false;
+    }
+
+    return isRecipesFiltered;
+  };
 }

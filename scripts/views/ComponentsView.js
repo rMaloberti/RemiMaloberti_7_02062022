@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 // IMPORTS
@@ -71,8 +72,11 @@ export default class ComponentsView {
     const filtersSearch = document.createElement('input');
     filtersSearch.id = `${type}-filters-search`;
     filtersSearch.classList.add('filters-btn-header__textfield');
-    filtersSearch.setAttribute('type', 'text');
-    filtersSearch.setAttribute('placeholder', `Rechercher un ${FilterTypes.filterSearch({ type })}`);
+    filtersSearch.setAttribute('type', 'search');
+    filtersSearch.setAttribute(
+      'placeholder',
+      `Rechercher un ${FilterTypes.filterSearch({ type })}`
+    );
     /* END Button textfield */
 
     /* Button toggle */
@@ -201,13 +205,17 @@ export default class ComponentsView {
       /* List ingredient */
       const listIngredient = document.createElement('li');
       listIngredient.classList.add('desc-body-ingredient');
-      listIngredient.textContent = `${ingredient.ingredient}${ingredient.quantity || ingredient.quantite ? ': ' : ''}`;
+      listIngredient.textContent = `${ingredient.ingredient}${
+        ingredient.quantity || ingredient.quantite ? ': ' : ''
+      }`;
 
       if (ingredient.quantity || ingredient.quantite) {
         /* Ingredient quantity */
         const ingredientQty = document.createElement('span');
         ingredientQty.classList.add('desc-body-ingredient__qty');
-        ingredientQty.textContent = `${ingredient.quantity || ingredient.quantite}${ingredient.unit ? ` ${ingredient.unit}` : ''}`;
+        ingredientQty.textContent = `${ingredient.quantity || ingredient.quantite}${
+          ingredient.unit ? ` ${ingredient.unit}` : ''
+        }`;
         /* END Ingredient quantity */
 
         listIngredient.appendChild(ingredientQty);
