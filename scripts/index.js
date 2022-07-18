@@ -7,6 +7,9 @@ import SearchHelper from './utils/SearchHelper.js';
 // Recipes array
 let recipes;
 
+// isAlreayFiltered toggle
+let isAlreadyFiltered = false;
+
 // References array
 let references;
 
@@ -21,10 +24,16 @@ const init = () => {
   // Display page
   HomeView.displayPage(recipes, references);
 
-  // Event listeners
-  document
-    .getElementsByClassName('main-search-bar')
-    .addEventListener('input', SearchHelper.searchHandler);
+  // Main search bar event listener
+  document.getElementById('main-search-bar').addEventListener('input', (event) => {
+    // Toggle to know if the recipes array is filtered after calling the seearch handler
+    const isFilteredAfterHandler = SearchHelper.mainSearchHandler(event, isAlreadyFiltered);
+
+    // Update the isAlreadyFiltered toggle
+    isAlreadyFiltered = isFilteredAfterHandler;
+
+    console.log(isAlreadyFiltered);
+  });
 };
 
 init();

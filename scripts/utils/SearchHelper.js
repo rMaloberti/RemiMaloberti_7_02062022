@@ -36,16 +36,24 @@ export default class StringHelper {
   };
 
   // SEARCH HANDLER
-  static mainSearchHandler = (event) => {
+  static mainSearchHandler = (event, isAlreadyFiltered) => {
     // Search bar
     const searchBar = event.target;
 
     // Search bar value
     const searchBarValue = this.normalize(searchBar.value);
 
+    // isRecipesFiltered toggle
+    let isRecipesFiltered = isAlreadyFiltered;
+
     if (searchBarValue.length > 2) {
-      console.log(searchBar);
       console.log(searchBarValue);
+      isRecipesFiltered = true;
+    } else if (isAlreadyFiltered) {
+      console.log(searchBarValue);
+      isRecipesFiltered = false;
     }
+
+    return isRecipesFiltered;
   };
 }
