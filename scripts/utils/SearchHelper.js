@@ -61,11 +61,12 @@ export default class StringHelper {
     }
 
     // Search bar value
-    const searchBarValue = searchBar.value;
+    const searchBarValue = this.normalize(searchBar.value);
 
     if (searchBarValue.length > 2) {
       console.log(searchBar);
       console.log(searchBarType);
+      console.log(searchBarValue);
     }
   };
 }
