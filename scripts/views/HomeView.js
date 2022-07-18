@@ -48,7 +48,9 @@ export default class HomeView {
 
   // DISPLAY RECIPES
   static displayRecipes = (recipes) => {
+    // For each recipe
     recipes.forEach((recipe) => {
+      // Add a recipe card in the DOM
       document.getElementById('recipes').appendChild(
         ComponentsView.recipeCard({
           recipeId: recipe.id,
@@ -63,7 +65,19 @@ export default class HomeView {
 
   // DISPLAY PAGE
   static displayPage = (recipes, references) => {
+    // Display filters
     this.displayFilters(references);
+
+    // Display recipes
+    this.displayRecipes(recipes);
+  };
+
+  // RELOAD PAGE
+  static reloadPage = (recipes) => {
+    // Clear the recipes container
+    document.getElementById('recipes').removeChildren();
+
+    // Display recipes
     this.displayRecipes(recipes);
   };
 }

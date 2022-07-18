@@ -3,13 +3,22 @@
 import RecipesModel from './models/RecipesModel.js';
 import HomeView from './views/HomeView.js';
 
+// Recipes array
+let recipes;
+
+// References array
+let references;
+
+// INIT
 const init = () => {
-  const recipes = RecipesModel.getRecipes();
-  const references = RecipesModel.getReferences(recipes);
+  // Get recipes
+  recipes = RecipesModel.getRecipes();
 
+  // Get references
+  references = RecipesModel.getReferences(recipes);
+
+  // Display page
   HomeView.displayPage(recipes, references);
-
-  console.log(RecipesModel.getReferences(RecipesModel.getRecipes()));
 };
 
 init();
