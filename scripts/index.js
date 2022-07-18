@@ -2,6 +2,7 @@
 /* eslint-disable import/extensions */
 import RecipesModel from './models/RecipesModel.js';
 import HomeView from './views/HomeView.js';
+import SearchHelper from './utils/SearchHelper.js';
 
 // Recipes array
 let recipes;
@@ -19,6 +20,11 @@ const init = () => {
 
   // Display page
   HomeView.displayPage(recipes, references);
+
+  // Event listeners
+  document.querySelectorAll('input[type=search]').forEach((searchBar) => {
+    searchBar.addEventListener('input', SearchHelper.searchHandler);
+  });
 };
 
 init();

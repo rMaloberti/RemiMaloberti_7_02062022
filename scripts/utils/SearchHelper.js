@@ -34,4 +34,38 @@ export default class StringHelper {
 
     return returnRecipe;
   };
+
+  // SEARCH HANDLER
+  static searchHandler = (event) => {
+    // Search bar
+    const searchBar = event.target;
+
+    // Search bar type
+    let searchBarType;
+
+    switch (searchBar.id) {
+      case 'main-search-bar':
+        searchBarType = 'main';
+        break;
+      case 'ingredients-filters-search':
+        searchBarType = 'ingredients';
+        break;
+      case 'appliances-filters-search':
+        searchBarType = 'appliances';
+        break;
+      case 'tools-filters-search':
+        searchBarType = 'tools';
+        break;
+      default:
+        break;
+    }
+
+    // Search bar value
+    const searchBarValue = searchBar.value;
+
+    if (searchBarValue.length > 2) {
+      console.log(searchBar);
+      console.log(searchBarType);
+    }
+  };
 }

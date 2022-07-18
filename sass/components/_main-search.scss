@@ -1,70 +1,70 @@
 .main-search {
+  /* Size */
+  width: 100%;
+
+  &__form {
     /* Size */
     width: 100%;
 
-    &__form {
+    /* Position */
+    position: relative;
+
+    .main-search-fieldset {
+      /* Size */
+      width: 100%;
+      height: 4em;
+
+      /* Display */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      /* Background */
+      background-color: $lightgrey;
+
+      /* Margin and padding */
+      padding: 0 0.5em 0 2em;
+
+      .main-search-bar {
         /* Size */
-        width: 100%;
+        width: 95%;
+        height: 100%;
 
-        /* Position */
-        position: relative;
+        /* Background */
+        background-color: $lightgrey;
 
-        .main-search-fieldset {
-            /* Size */
-            width: 100%;
-            height: 4em;
+        /* Font */
+        font-size: 1.2em;
 
-            /* Display */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            /* Background */
-            background-color: $lightgrey;
-
-            /* Margin and padding */
-            padding: 0 0.5em 0 2em;
-
-            .main-search-bar {
-                /* Size */
-                width: 75%;
-                height: 100%;
-
-                /* Background */
-                background-color: $lightgrey;
-
-                /* Font */
-                font-size: 1.2em;
-
-                &::placeholder {
-                    /* Font */
-                    color: $grey;
-                }
-            }
-
-            .main-search-btn {
-                /* Display */
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                /* Size */
-                width: 3em;
-                height: 100%;
-
-                /* Interactivity */
-                cursor: pointer;
-
-                &__icon {
-                    /* Size */
-                    width: 2em;
-                    height: 2em;
-
-                    /* Background */
-                    background-image: url("../../assets/icons/search.svg");
-                    background-size: cover;
-                }
-            }
+        &::placeholder {
+          /* Font */
+          color: $grey;
         }
+      }
+
+      .main-search-btn {
+        /* Display */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Size */
+        width: 3em;
+        height: 100%;
+
+        /* Interactivity */
+        cursor: pointer;
+
+        &__icon {
+          /* Size */
+          width: 2em;
+          height: 2em;
+
+          /* Background */
+          background-image: url('../../assets/icons/search.svg');
+          background-size: cover;
+        }
+      }
     }
+  }
 }
