@@ -36,12 +36,9 @@ export default class StringHelper {
   };
 
   // SEARCH HANDLER
-  static mainSearchHandler = (event, isAlreadyFiltered) => {
-    // Search bar
-    const searchBar = event.target;
-
+  static mainSearchHandler = (value, isAlreadyFiltered) => {
     // Search bar value
-    const searchBarValue = this.normalize(searchBar.value);
+    const searchBarValue = this.normalize(value);
 
     // isRecipesFiltered toggle
     let isRecipesFiltered = isAlreadyFiltered;
