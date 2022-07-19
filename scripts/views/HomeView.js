@@ -72,15 +72,30 @@ export default class HomeView {
     this.displayRecipes(recipes);
   };
 
-  // RELOAD PAGE
-  static reloadPage = (recipes, references) => {
+  // RELOAD FILTERS
+  static reloadFilters = (references) => {
     // Clear the filters container
     document.getElementById('filters').innerHTML = '';
 
+    // Display filters
+    this.displayFilters(references);
+  };
+
+  // RELOAD RECIPES
+  static reloadRecipes = (recipes) => {
     // Clear the recipes container
     document.getElementById('recipes').innerHTML = '';
 
-    // Display page
-    this.displayPage(recipes, references);
+    // Display recipes
+    this.displayRecipes(recipes);
+  };
+
+  // RELOAD PAGE
+  static reloadPage = (recipes, references) => {
+    // Reload filters
+    this.reloadFilters(references);
+
+    // Reload recipes
+    this.reloadRecipes(recipes);
   };
 }

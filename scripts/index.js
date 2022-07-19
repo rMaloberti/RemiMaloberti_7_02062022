@@ -17,10 +17,13 @@ let references;
 let isMainSearchApplied = false;
 
 // MAIN SEARCH BAR
-const mainSearchBar = document.getElementById('main-search-bar');
+let mainSearchBar;
 
 // MAIN SEARCH BUTTON
-const mainSearchBtn = document.getElementById('main-search-btn');
+let mainSearchBtn;
+
+// FILTER SEARCH BARS
+let filterSearchBars;
 
 // CALL THE MAIN SEARCH HANDLER
 const callMainSearchHandler = (value) => {
@@ -46,6 +49,18 @@ const callMainSearchHandler = (value) => {
   }
 };
 
+// GET DOM ELEMENTS
+const getDomElements = () => {
+  // Main search bar
+  mainSearchBar = document.getElementById('main-search-bar');
+
+  // Main search button
+  mainSearchBtn = document.getElementById('main-search-btn');
+
+  // Filter search bars
+  filterSearchBars = document.querySelectorAll('.filters-btn-header__textfield');
+};
+
 // INIT
 const init = () => {
   // Get recipes
@@ -57,14 +72,22 @@ const init = () => {
   // Display page
   HomeView.displayPage(recipes, references);
 
+  // Get all DOM elements
+  getDomElements();
+
   // Main search bar event listener
   mainSearchBar.addEventListener('input', (event) => {
     callMainSearchHandler(event.target.value);
   });
 
-  // Mais search button event listener
+  // Main search button event listener
   mainSearchBtn.addEventListener('click', () => {
     callMainSearchHandler(mainSearchBar.value);
+  });
+
+  // Filter search bar event listener
+  filterSearchBars.forEach((filterSearchBar) => {
+    filterSearchBar.addEventListener('input', () => console.log(filterSearchBar));
   });
 };
 
