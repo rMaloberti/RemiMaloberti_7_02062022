@@ -45,6 +45,27 @@ export default class ComponentsView {
     return appliedFilter;
   };
 
+  static filter = (data) => {
+    /* Component datas */
+    const { filter } = data;
+
+    /* List item */
+    const listItem = document.createElement('li');
+    listItem.classList.add('filters-btn-list-item');
+
+    /* List item text */
+    const listItemText = document.createElement('p');
+    listItemText.classList.add('filters-btn-list-item__text');
+    listItemText.textContent = filter;
+
+    /* Event listeners */
+    listItemText.addEventListener('click', BtnHelper.addFilter);
+
+    listItem.appendChild(listItemText);
+
+    return listItem;
+  };
+
   // FILTERS BUTTON
   static filtersBtn = (data) => {
     /* Component datas */
@@ -103,22 +124,10 @@ export default class ComponentsView {
     filtersList.classList.add('filters-btn-list');
 
     filters.forEach((filter) => {
-      /* List item */
-      const listItem = document.createElement('li');
-      listItem.classList.add('filters-btn-list-item');
+      /* List filter */
+      const listFilter = this.filter({ filter });
 
-      /* List item text */
-      const listItemText = document.createElement('p');
-      listItemText.classList.add('filters-btn-list-item__text');
-      listItemText.textContent = filter;
-
-      /* Event listeners */
-      listItemText.addEventListener('click', BtnHelper.addFilter);
-
-      listItem.appendChild(listItemText);
-      /* END List item */
-
-      filtersList.append(listItem);
+      filtersList.append(listFilter);
     });
     /* END Filters list */
 

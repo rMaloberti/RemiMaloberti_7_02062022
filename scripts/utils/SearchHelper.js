@@ -57,7 +57,7 @@ export default class StringHelper {
     let hasRecipesChanged = true;
 
     // Filtered recipes array
-    let filteredRecipes;
+    let filteredRecipes = recipes;
 
     if (searchBarValue.length > 2) {
       filteredRecipes = this.filterRecipes(recipes, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);

@@ -81,6 +81,23 @@ export default class HomeView {
     this.displayFilters(references);
   };
 
+  // RELOAS FILTERS LIST
+  static reloadFiltersList = (filterType, filters) => {
+    // Filters list element
+    const filtersListElem = document.getElementById(`${filterType}-filters-list`);
+
+    // Clear filters list element
+    filtersListElem.innerHTML = '';
+
+    // Display filters in filters list element
+    filters.forEach((filter) => {
+      // Filter element
+      const filterItem = ComponentsView.filter({ filter: filter.displayValue });
+
+      filtersListElem.append(filterItem);
+    });
+  };
+
   // RELOAD RECIPES
   static reloadRecipes = (recipes) => {
     // Clear the recipes container
