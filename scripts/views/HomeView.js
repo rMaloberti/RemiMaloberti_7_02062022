@@ -72,12 +72,47 @@ export default class HomeView {
     this.displayRecipes(recipes);
   };
 
-  // RELOAD PAGE
-  static reloadPage = (recipes) => {
+  // RELOAD FILTERS
+  static reloadFilters = (references) => {
+    // Clear the filters container
+    document.getElementById('filters').innerHTML = '';
+
+    // Display filters
+    this.displayFilters(references);
+  };
+
+  // RELOAS FILTERS LIST
+  static reloadFiltersList = (filterType, filters) => {
+    // Filters list element
+    const filtersListElem = document.getElementById(`${filterType}-filters-list`);
+
+    // Clear filters list element
+    filtersListElem.innerHTML = '';
+
+    // Display filters in filters list element
+    filters.forEach((filter) => {
+      // Filter element
+      const filterItem = ComponentsView.filter({ filter: filter.displayValue });
+
+      filtersListElem.append(filterItem);
+    });
+  };
+
+  // RELOAD RECIPES
+  static reloadRecipes = (recipes) => {
     // Clear the recipes container
-    document.getElementById('recipes').removeChildren();
+    document.getElementById('recipes').innerHTML = '';
 
     // Display recipes
     this.displayRecipes(recipes);
+  };
+
+  // RELOAD PAGE
+  static reloadPage = (recipes, references) => {
+    // Reload filters
+    this.reloadFilters(references);
+
+    // Reload recipes
+    this.reloadRecipes(recipes);
   };
 }

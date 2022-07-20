@@ -1,5 +1,5 @@
-export default class FilterTypes {
-  /* Filter title */
+export default class FilterHelper {
+  // FILTER TITLE
   static filterTitle = (data) => {
     /* Filter type */
     const { type } = data;
@@ -25,7 +25,7 @@ export default class FilterTypes {
     return title;
   };
 
-  /* Filter search */
+  // FILTER SEARCH
   static filterSearch = (data) => {
     /* Filter type */
     const { type } = data;
@@ -49,5 +49,16 @@ export default class FilterTypes {
     }
 
     return text;
+  };
+
+  // FILTER SEARCH HANDLER
+  static filterSearchHandler = (value, references) => {
+    console.log(value);
+    console.log(references);
+
+    const hasFiltersChanged = true;
+    const filteredFilters = references;
+
+    return { hasFiltersChanged, filteredFilters };
   };
 }
