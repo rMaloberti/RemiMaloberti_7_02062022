@@ -12,7 +12,7 @@ const baseRecipes = RecipesModel.getRecipes();
 let recipes;
 
 // BASE REFERENCES ARRAY
-let baseReferences = RecipesModel.getReferences(baseRecipes);
+const baseReferences = RecipesModel.getReferences(baseRecipes);
 
 // REFERENCES ARRAY
 let references;
@@ -89,7 +89,7 @@ const callFilterSearchHandler = (value, filterType) => {
   }
 
   // Fill the filter references array with the right filters
-  filterReferences = [...references[filterId]];
+  filterReferences = [...baseReferences[filterId]];
 
   // Toggle to know if the filters array is filtered after calling the seearch handler
   const { hasFiltersChanged, filteredFilters } = FilterHelper.filterSearchHandler(
