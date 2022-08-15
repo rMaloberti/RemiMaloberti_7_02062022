@@ -43,10 +43,20 @@ const getDomElements = () => {
 
 // CALL THE MAIN SEARCH HANDLER
 const callMainSearchHandler = (value) => {
+  // Main search references
+  const mainSearchReferences = [
+    ...baseReferences[0],
+    ...baseReferences[1],
+    ...baseReferences[2],
+    ...baseReferences[3],
+    ...baseReferences[4],
+  ];
+
   // Toggle to know if the recipes array is filtered after calling the search handler
   const { isRecipesFiltered, hasRecipesChanged, filteredRecipes } = SearchHelper.mainSearchHandler(
     value,
     isMainSearchApplied,
+    mainSearchReferences,
     baseRecipes
   );
 
@@ -67,16 +77,12 @@ const callMainSearchHandler = (value) => {
 
 // CALL THE FILTER SEARCH BAR HANDLER
 const callFilterSearchHandler = (value, filterType) => {
-  // Filter references
-  let filterReferences;
-
   // Filter references Id in the references array
   let filterId;
 
   switch (filterType) {
     case 'ingredients':
       filterId = 3;
-      filterReferences = [...references[3]];
       break;
     case 'appliances':
       filterId = 2;
@@ -89,7 +95,7 @@ const callFilterSearchHandler = (value, filterType) => {
   }
 
   // Fill the filter references array with the right filters
-  filterReferences = [...baseReferences[filterId]];
+  const filterReferences = [...baseReferences[filterId]];
 
   // Toggle to know if the filters array is filtered after calling the seearch handler
   const { hasFiltersChanged, filteredFilters } = FilterHelper.filterSearchHandler(
@@ -136,8 +142,6 @@ const init = () => {
       callFilterSearchHandler(event.target.value, event.target.id.split('-')[0]);
     });
   });
-
-  console.log(references);
 };
 
 init();
