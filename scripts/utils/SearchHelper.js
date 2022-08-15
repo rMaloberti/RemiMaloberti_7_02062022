@@ -64,7 +64,7 @@ export default class StringHelper {
     let filteredRecipes = recipes;
 
     if (searchBarValue.length > 2) {
-      filteredRecipes = this.filterRecipes(recipes, Algorithms.algo1(references, value));
+      filteredRecipes = this.filterRecipes(recipes, Algorithms.algo2(references, value));
       isRecipesFiltered = true;
     } else if (isMainSearchApplied) {
       filteredRecipes = recipes;

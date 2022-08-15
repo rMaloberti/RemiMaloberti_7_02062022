@@ -17,4 +17,18 @@ export default class Algorithms {
   };
 
   // ALGORITHM 2 (ARRAY OBJECT METHODS)
+  static algo2 = (references, searchValue) => {
+    // Recipes Ids Set to return
+    const recipesIds = new Set();
+
+    references.forEach((reference) => {
+      if (reference.value.includes(searchValue)) {
+        reference.recipeIds.forEach((recipeId) => {
+          recipesIds.add(recipeId);
+        });
+      }
+    });
+
+    return recipesIds;
+  };
 }
