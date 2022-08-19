@@ -58,9 +58,6 @@ export default class ComponentsView {
     listItemText.classList.add('filters-btn-list-item__text');
     listItemText.textContent = filter;
 
-    /* Event listeners */
-    listItemText.addEventListener('click', BtnHelper.addFilter);
-
     listItem.appendChild(listItemText);
 
     return listItem;

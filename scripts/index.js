@@ -5,6 +5,7 @@ import RecipesModel from './models/RecipesModel.js';
 import HomeView from './views/HomeView.js';
 import SearchHelper from './utils/SearchHelper.js';
 import FilterHelper from './utils/FilterHelper.js';
+import BtnHelper from './utils/BtnHelper.js';
 
 // BASE RECIPES ARRAY
 const baseRecipes = RecipesModel.getRecipes();
@@ -136,6 +137,13 @@ const setEventListeners = () => {
   components.filterSearchBars.forEach((filterSearchBar) => {
     filterSearchBar.addEventListener('input', (event) => {
       callFilterSearchHandler(event.target.value, event.target.id.split('-')[0]);
+    });
+  });
+
+  // Filters event listener
+  components.filters.forEach((filter) => {
+    filter.addEventListener('click', () => {
+      BtnHelper.addFilter();
     });
   });
 };
