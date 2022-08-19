@@ -56,29 +56,24 @@ export default class FilterHelper {
   };
 
   // FILTER SEARCH HANDLER
-  static filterSearchHandler = (value, references, isFilterSearchApplied) => {
+  static filterSearchHandler = (value, references) => {
     // Search bar value
     const searchBarValue = SearchHelper.normalize(value);
 
     // HasFiltersChanged toggle
     let hasFiltersChanged = true;
 
-    // is FiltersFiltered toggle
-    let isFiltersFiltered = false;
-
     // Filtered filters array
     let filteredFilters = references;
 
     if (searchBarValue.length > 0) {
       filteredFilters = Array.from(Algorithms.filterAlgo(references, searchBarValue));
-      isFiltersFiltered = true;
-    } else if (isFilterSearchApplied) {
+    } else if (searchBarValue.length === 0) {
       filteredFilters = references;
-      isFiltersFiltered = true;
     } else {
       hasFiltersChanged = false;
     }
 
-    return { hasFiltersChanged, isFiltersFiltered, filteredFilters };
+    return { hasFiltersChanged, filteredFilters };
   };
 }
