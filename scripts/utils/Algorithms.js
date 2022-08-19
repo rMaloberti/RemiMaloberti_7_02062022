@@ -31,4 +31,18 @@ export default class Algorithms {
 
     return recipesIds;
   };
+
+  // FILTER SEARCH ALGORITHM
+  static filterAlgo = (references, searchValue) => {
+    // Filtered references Set to return
+    const filteredReferences = new Set();
+
+    references.forEach((reference) => {
+      if (reference.value.includes(searchValue)) {
+        filteredReferences.add(reference);
+      }
+    });
+
+    return filteredReferences;
+  };
 }

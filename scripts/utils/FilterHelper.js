@@ -1,3 +1,7 @@
+/* eslint-disable import/extensions */
+import Algorithms from './Algorithms.js';
+import SearchHelper from './SearchHelper.js';
+
 export default class FilterHelper {
   // FILTER TITLE
   static filterTitle = (data) => {
@@ -52,13 +56,29 @@ export default class FilterHelper {
   };
 
   // FILTER SEARCH HANDLER
-  static filterSearchHandler = (value, references) => {
-    console.log(value);
-    console.log(references);
+  static filterSearchHandler = (value, references, isFilterSearchApplied) => {
+    // Search bar value
+    const searchBarValue = SearchHelper.normalize(value);
 
-    const hasFiltersChanged = true;
-    const filteredFilters = references;
+    // HasFiltersChanged toggle
+    let hasFiltersChanged = true;
 
-    return { hasFiltersChanged, filteredFilters };
+    // is FiltersFiltered toggle
+    let isFiltersFiltered = false;
+
+    // Filtered filters array
+    let filteredFilters = references;
+
+    if (searchBarValue.length > 0) {
+      filteredFilters = Array.from(Algorithms.filterAlgo(references, searchBarValue));
+      isFiltersFiltered = true;
+    } else if (isFilterSearchApplied) {
+      filteredFilters = references;
+      isFiltersFiltered = true;
+    } else {
+      hasFiltersChanged = false;
+    }
+
+    return { hasFiltersChanged, isFiltersFiltered, filteredFilters };
   };
 }

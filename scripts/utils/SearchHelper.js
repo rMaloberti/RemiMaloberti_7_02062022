@@ -3,7 +3,7 @@
 import Algorithms from './Algorithms.js';
 
 // STRING HELPER
-export default class StringHelper {
+export default class SearchHelper {
   // NORMALIZE
   static normalize = (string) => {
     // Normalized string

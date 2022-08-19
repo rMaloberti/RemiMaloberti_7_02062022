@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable comma-dangle */
 /* eslint-disable import/extensions */
 import RecipesModel from './models/RecipesModel.js';
@@ -20,6 +21,9 @@ let references;
 // ISMAINSEARCHAPPLIED TOGGLE
 let isMainSearchApplied = false;
 
+// ISFILTERSEARCHAPPLIED TOGGLE
+let isFilterSearchApplied = false;
+
 // MAIN SEARCH BAR
 let mainSearchBar;
 
@@ -39,6 +43,44 @@ const getDomElements = () => {
 
   // Filter search bars
   filterSearchBars = document.querySelectorAll('.filters-btn-header__textfield');
+};
+
+// CALL THE FILTER SEARCH BAR HANDLER
+const callFilterSearchHandler = (value, filterType) => {
+  // Filter references Id in the references array
+  let filterId;
+
+  switch (filterType) {
+    case 'ingredients':
+      filterId = 3;
+      break;
+    case 'appliances':
+      filterId = 2;
+      break;
+    case 'tools':
+      filterId = 4;
+      break;
+    default:
+      break;
+  }
+
+  // Fill the filter references array with the right filters
+  const filterReferences = [...references[filterId]];
+
+  // Toggle to know if the filters array is filtered after calling the seearch handler
+  const { hasFiltersChanged, isFiltersFiltered, filteredFilters } =
+    FilterHelper.filterSearchHandler(value, filterReferences, isFilterSearchApplied);
+
+  // Update de isFilterSearchApplied toggle
+  isFilterSearchApplied = isFiltersFiltered;
+
+  if (hasFiltersChanged) {
+    // Update the references array
+    references[filterId] = filteredFilters;
+
+    // Reload the filters list
+    HomeView.reloadFiltersList(filterType, filteredFilters);
+  }
 };
 
 // CALL THE MAIN SEARCH HANDLER
@@ -72,43 +114,16 @@ const callMainSearchHandler = (value) => {
 
     // Reload the page
     HomeView.reloadPage(recipes, references);
-  }
-};
 
-// CALL THE FILTER SEARCH BAR HANDLER
-const callFilterSearchHandler = (value, filterType) => {
-  // Filter references Id in the references array
-  let filterId;
+    // Get the new filter search bars
+    filterSearchBars = document.querySelectorAll('.filters-btn-header__textfield');
 
-  switch (filterType) {
-    case 'ingredients':
-      filterId = 3;
-      break;
-    case 'appliances':
-      filterId = 2;
-      break;
-    case 'tools':
-      filterId = 4;
-      break;
-    default:
-      break;
-  }
-
-  // Fill the filter references array with the right filters
-  const filterReferences = [...baseReferences[filterId]];
-
-  // Toggle to know if the filters array is filtered after calling the seearch handler
-  const { hasFiltersChanged, filteredFilters } = FilterHelper.filterSearchHandler(
-    value,
-    filterReferences
-  );
-
-  if (hasFiltersChanged) {
-    // Update the references array
-    references[filterId] = filteredFilters;
-
-    // Reload the filters list
-    HomeView.reloadFiltersList(filterType, filteredFilters);
+    // Filter search bar event listener
+    filterSearchBars.forEach((filterSearchBar) => {
+      filterSearchBar.addEventListener('input', (event) => {
+        callFilterSearchHandler(event.target.value, event.target.id.split('-')[0]);
+      });
+    });
   }
 };
 
