@@ -33,8 +33,6 @@ export default class ComponentsView {
     removeIcon.classList.add('remove-filter__icon');
     /* END Remove icon */
 
-    removeBtn.addEventListener('click', BtnHelper.removeFilter);
-
     removeBtn.appendChild(removeIcon);
     /* END Remove button */
 

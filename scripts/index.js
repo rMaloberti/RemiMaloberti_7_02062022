@@ -41,6 +41,9 @@ const components = {
 
 // COMPUTE SEARCH
 const computeSearch = () => {
+  // Reset the recipes array
+  searchState.recipes = baseRecipes;
+
   // Reset the searchIds object
   searchIds.mainSearchRecipeIds = new Set();
   searchIds.ingredientsRecipeIds = new Set();
@@ -79,15 +82,15 @@ const computeSearch = () => {
     }
   });
 
-  // Base recipe Ids
-  const baseRecipeIds = [];
+  // Recipe Ids
+  const recipeIds = [];
 
   baseRecipes.forEach((recipe) => {
-    baseRecipeIds.unshift(recipe.id);
+    recipeIds.unshift(recipe.id);
   });
 
   // Computed recipeIds Arr
-  const computedRecipeIds = baseRecipeIds.filter(
+  const computedRecipeIds = recipeIds.filter(
     (value) =>
       (Array.from(searchIds.mainSearchRecipeIds).includes(value) ||
         Array.from(searchIds.mainSearchRecipeIds).length === 0) &&
@@ -140,6 +143,7 @@ const addFilter = (event) => {
     if (reference.displayValue === filterText) {
       searchState.references[filterReferencesId].splice(index, 1);
       searchState.appliedFilters.push({
+        value: filterText,
         referencesSubArr: filterReferencesId,
         recipeIds: reference.recipeIds,
       });
@@ -147,6 +151,22 @@ const addFilter = (event) => {
   });
 
   BtnHelper.addFilter(event);
+
+  computeSearch();
+};
+
+// REMOVE FILTER HANDLER
+const removeFilter = (event) => {
+  // Filter text
+  const filterText = event.currentTarget.parentElement.querySelector('p').textContent;
+
+  searchState.appliedFilters.forEach((appliedFilter, index) => {
+    if (appliedFilter.value === filterText) {
+      searchState.appliedFilters.splice(index, 1);
+    }
+  });
+
+  BtnHelper.removeFilter(event);
 
   computeSearch();
 };
@@ -235,6 +255,9 @@ const getDomElements = () => {
 
   // Filters
   components.filters = document.querySelectorAll('.filters-btn-list-item__text');
+
+  // AppliedFilters
+  components.appliedFilters = document.querySelectorAll('.remove-filter');
 };
 
 // SET EVENT LISTENERS
@@ -260,6 +283,11 @@ const setEventListeners = () => {
   components.filters.forEach((filter) => {
     filter.addEventListener('click', addFilter);
   });
+
+  // Applied filters envent listener
+  components.appliedFilters.forEach((appliedFilter) => {
+    appliedFilter.addEventListener('click', removeFilter);
+  });
 };
 
 // SET EVENT LISTENERS ON FILTERS
@@ -269,6 +297,9 @@ const setEventListenersOnFilters = () => {
 
   // Filters
   components.filters = document.querySelectorAll('.filters-btn-list-item__text');
+
+  // AppliedFilters
+  components.appliedFilters = document.querySelectorAll('.remove-filter');
 
   // Filter search bar event listener
   components.filterSearchBars.forEach((filterSearchBar) => {
@@ -280,6 +311,11 @@ const setEventListenersOnFilters = () => {
   // Filters event listener
   components.filters.forEach((filter) => {
     filter.addEventListener('click', addFilter);
+  });
+
+  // Applied filters envent listener
+  components.appliedFilters.forEach((appliedFilter) => {
+    appliedFilter.addEventListener('click', removeFilter);
   });
 };
 
