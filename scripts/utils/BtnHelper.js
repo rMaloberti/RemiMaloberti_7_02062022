@@ -113,5 +113,9 @@ export default class BtnHelper {
 
     filtersBtnList.appendChild(listItem);
     appliedFiltersSection.removeChild(appliedFilter);
+
+    if (!appliedFiltersSection.hasChildNodes()) {
+      appliedFiltersSection.classList.add('applied-filters--empty');
+    }
   };
 }
