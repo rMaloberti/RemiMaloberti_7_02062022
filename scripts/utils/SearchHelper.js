@@ -65,7 +65,7 @@ export default class SearchHelper {
     let filteredRecipeIds;
 
     if (searchBarValue.length > 2) {
-      filteredRecipeIds = Algorithms.algo1(references, searchBarValue);
+      filteredRecipeIds = Algorithms.algo2(references, searchBarValue);
       isRecipesFiltered = true;
     } else if (isMainSearchApplied) {
       filteredRecipeIds = baseRecipeIds;
