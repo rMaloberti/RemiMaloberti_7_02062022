@@ -33,8 +33,6 @@ export default class ComponentsView {
     removeIcon.classList.add('remove-filter__icon');
     /* END Remove icon */
 
-    removeBtn.addEventListener('click', BtnHelper.removeFilter);
-
     removeBtn.appendChild(removeIcon);
     /* END Remove button */
 
@@ -57,9 +55,6 @@ export default class ComponentsView {
     const listItemText = document.createElement('p');
     listItemText.classList.add('filters-btn-list-item__text');
     listItemText.textContent = filter;
-
-    /* Event listeners */
-    listItemText.addEventListener('click', BtnHelper.addFilter);
 
     listItem.appendChild(listItemText);
 

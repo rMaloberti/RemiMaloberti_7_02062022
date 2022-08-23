@@ -1,7 +1,9 @@
+/* eslint-disable import/extensions */
 /* eslint-disable array-callback-return */
+import Algorithms from './Algorithms.js';
 
 // STRING HELPER
-export default class StringHelper {
+export default class SearchHelper {
   // NORMALIZE
   static normalize = (string) => {
     // Normalized string
@@ -39,14 +41,16 @@ export default class StringHelper {
 
   // FILTER RECIPES
   static filterRecipes = (recipes, recipesIds) => {
+    const idsArray = Array.from(recipesIds);
+
     // Filtered recipes
-    const filteredRecipes = recipes.filter((recipe) => recipesIds.includes(recipe.id));
+    const filteredRecipes = recipes.filter((recipe) => idsArray.includes(recipe.id));
 
     return filteredRecipes;
   };
 
   // SEARCH HANDLER
-  static mainSearchHandler = (value, isMainSearchApplied, recipes) => {
+  static mainSearchHandler = (value, isMainSearchApplied, references, recipes) => {
     // Search bar value
     const searchBarValue = this.normalize(value);
 
@@ -60,10 +64,10 @@ export default class StringHelper {
     let filteredRecipes = recipes;
 
     if (searchBarValue.length > 2) {
-      filteredRecipes = this.filterRecipes(recipes, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+      filteredRecipes = this.filterRecipes(recipes, Algorithms.algo2(references, value));
       isRecipesFiltered = true;
     } else if (isMainSearchApplied) {
-      filteredRecipes = this.filterRecipes(recipes, [1, 2, 4]);
+      filteredRecipes = recipes;
       isRecipesFiltered = false;
     } else {
       hasRecipesChanged = false;
