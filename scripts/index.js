@@ -40,9 +40,10 @@ const components = {
 };
 
 // COMPUTE SEARCH
-const computeSearch = () => {
-  // Reset the recipes array
-  searchState.recipes = baseRecipes;
+const computeSearch = (isFilterRemoved) => {
+  if (isFilterRemoved) {
+    callMainSearchHandler(components.mainSearchBar.value);
+  }
 
   // Reset the searchIds object
   searchIds.mainSearchRecipeIds = new Set();
@@ -152,7 +153,7 @@ const addFilter = (event) => {
 
   BtnHelper.addFilter(event);
 
-  computeSearch();
+  computeSearch(false);
 };
 
 // REMOVE FILTER HANDLER
@@ -168,7 +169,7 @@ const removeFilter = (event) => {
 
   BtnHelper.removeFilter(event);
 
-  computeSearch();
+  computeSearch(true);
 };
 
 // CALL THE FILTER SEARCH BAR HANDLER
@@ -238,7 +239,7 @@ const callMainSearchHandler = (value) => {
       searchState.references[subArrId].splice(filterId, 1);
     });
 
-    computeSearch();
+    computeSearch(false);
   }
 };
 
