@@ -5,4 +5,13 @@
   flex-wrap: wrap;
   column-gap: 2.75%;
   row-gap: 4em;
+
+  .no-recipes {
+    width: 100%;
+    font-size: 1.25em;
+    text-align: center;
+    color: grey;
+
+    margin: 7.5em 0;
+  }
 }

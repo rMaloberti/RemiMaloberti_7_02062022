@@ -48,19 +48,27 @@ export default class HomeView {
 
   // DISPLAY RECIPES
   static displayRecipes = (recipes) => {
-    // For each recipe
-    recipes.forEach((recipe) => {
-      // Add a recipe card in the DOM
-      document.getElementById('recipes').appendChild(
-        ComponentsView.recipeCard({
-          recipeId: recipe.id,
-          recipeTitle: recipe.name,
-          recipeTime: recipe.time,
-          recipeIngredients: recipe.ingredients,
-          recipeDesc: recipe.description,
-        })
-      );
-    });
+    if (recipes.length !== 0) {
+      // For each recipe
+      recipes.forEach((recipe) => {
+        // Add a recipe card in the DOM
+        document.getElementById('recipes').appendChild(
+          ComponentsView.recipeCard({
+            recipeId: recipe.id,
+            recipeTitle: recipe.name,
+            recipeTime: recipe.time,
+            recipeIngredients: recipe.ingredients,
+            recipeDesc: recipe.description,
+          })
+        );
+      });
+    } else {
+      const noRecipes = document.createElement('p');
+      noRecipes.classList.add('no-recipes');
+      noRecipes.textContent = 'Aucune recette ne correspond à votre recherche...';
+
+      document.getElementById('recipes').appendChild(noRecipes);
+    }
   };
 
   // DISPLAY PAGE

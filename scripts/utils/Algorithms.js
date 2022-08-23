@@ -1,3 +1,7 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-cycle */
+import SearchHelper from './SearchHelper.js';
+
 // ALGORITHMS
 export default class Algorithms {
   // ALGORITHM 1 (NATIVE LOOPS)
@@ -6,7 +10,7 @@ export default class Algorithms {
     const recipesIds = new Set();
 
     for (let i = 0; i < references.length; i += 1) {
-      if (references[i].value.includes(searchValue)) {
+      if (SearchHelper.normalize(references[i].value).includes(searchValue)) {
         for (let j = 0; j < references[i].recipeIds.length; j += 1) {
           recipesIds.add(references[i].recipeIds[j]);
         }
@@ -22,7 +26,7 @@ export default class Algorithms {
     const recipesIds = new Set();
 
     references.forEach((reference) => {
-      if (reference.value.includes(searchValue)) {
+      if (SearchHelper.normalize(reference.value).includes(searchValue)) {
         reference.recipeIds.forEach((recipeId) => {
           recipesIds.add(recipeId);
         });
@@ -38,7 +42,7 @@ export default class Algorithms {
     const filteredReferences = new Set();
 
     references.forEach((reference) => {
-      if (reference.value.includes(searchValue)) {
+      if (SearchHelper.normalize(reference.value).includes(searchValue)) {
         filteredReferences.add(reference);
       }
     });

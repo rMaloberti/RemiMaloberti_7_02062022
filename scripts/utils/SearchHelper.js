@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 /* eslint-disable array-callback-return */
 import Algorithms from './Algorithms.js';
@@ -50,7 +51,7 @@ export default class SearchHelper {
   };
 
   // SEARCH HANDLER
-  static mainSearchHandler = (value, isMainSearchApplied, references, recipes) => {
+  static mainSearchHandler = (value, isMainSearchApplied, references, baseRecipeIds) => {
     // Search bar value
     const searchBarValue = this.normalize(value);
 
@@ -61,18 +62,19 @@ export default class SearchHelper {
     let hasRecipesChanged = true;
 
     // Filtered recipes array
-    let filteredRecipes = recipes;
+    let filteredRecipeIds;
 
     if (searchBarValue.length > 2) {
-      filteredRecipes = this.filterRecipes(recipes, Algorithms.algo2(references, value));
+      filteredRecipeIds = Algorithms.algo2(references, searchBarValue);
       isRecipesFiltered = true;
     } else if (isMainSearchApplied) {
-      filteredRecipes = recipes;
+      filteredRecipeIds = baseRecipeIds;
       isRecipesFiltered = false;
     } else {
+      filteredRecipeIds = baseRecipeIds;
       hasRecipesChanged = false;
     }
 
-    return { isRecipesFiltered, hasRecipesChanged, filteredRecipes };
+    return { isRecipesFiltered, hasRecipesChanged, filteredRecipeIds };
   };
 }
