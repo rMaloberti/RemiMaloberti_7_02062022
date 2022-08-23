@@ -84,17 +84,32 @@ const computeSearch = () => {
   });
 
   // Computed recipeIds Arr
-  const computedRecipeIds = baseRecipeIds.filter(
-    (value) =>
-      (Array.from(searchIds.mainSearchRecipeIds).includes(value) ||
-        Array.from(searchIds.mainSearchRecipeIds).length === 0) &&
-      (Array.from(searchIds.ingredientsRecipeIds).includes(value) ||
-        Array.from(searchIds.ingredientsRecipeIds).length === 0) &&
-      (Array.from(searchIds.appliancesRecipeIds).includes(value) ||
-        Array.from(searchIds.appliancesRecipeIds).length === 0) &&
-      (Array.from(searchIds.toolsRecipeIds).includes(value) ||
-        Array.from(searchIds.toolsRecipeIds).length === 0)
-  );
+  let computedRecipeIds;
+
+  if (
+    Array.from(searchIds.mainSearchRecipeIds).length === 0 &&
+    components.mainSearchBar.value.length > 2
+  ) {
+    computedRecipeIds = [];
+  } else {
+    computedRecipeIds = baseRecipeIds.filter(
+      (value) =>
+        (Array.from(searchIds.mainSearchRecipeIds).includes(value) ||
+          Array.from(searchIds.mainSearchRecipeIds).length === 0) &&
+        (Array.from(searchIds.ingredientsRecipeIds).includes(value) ||
+          Array.from(searchIds.ingredientsRecipeIds).length === 0) &&
+        (Array.from(searchIds.appliancesRecipeIds).includes(value) ||
+          Array.from(searchIds.appliancesRecipeIds).length === 0) &&
+        (Array.from(searchIds.toolsRecipeIds).includes(value) ||
+          Array.from(searchIds.toolsRecipeIds).length === 0)
+    );
+  }
+
+  console.log(searchIds.mainSearchRecipeIds);
+  console.log(searchIds.ingredientsRecipeIds);
+  console.log(searchIds.appliancesRecipeIds);
+  console.log(searchIds.toolsRecipeIds);
+  console.log(computedRecipeIds);
 
   // Apply the search in the recipes Array
   searchState.recipes = SearchHelper.filterRecipes(baseRecipes, computedRecipeIds);
