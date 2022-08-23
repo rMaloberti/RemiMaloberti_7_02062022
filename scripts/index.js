@@ -12,6 +12,13 @@ import BtnHelper from './utils/BtnHelper.js';
 // BASE RECIPES ARRAY
 const baseRecipes = RecipesModel.getRecipes();
 
+// BASE RECIPE IDS
+const baseRecipeIds = [];
+
+baseRecipes.forEach((recipe) => {
+  baseRecipeIds.push(recipe.id);
+});
+
 // BASE REFERENCES ARRAY
 const baseReferences = RecipesModel.getReferences(baseRecipes);
 
@@ -40,21 +47,14 @@ const components = {
 };
 
 // COMPUTE SEARCH
-const computeSearch = (isFilterRemoved) => {
-  if (isFilterRemoved) {
-    callMainSearchHandler(components.mainSearchBar.value);
-  }
+const computeSearch = () => {
+  // Reset the recipes array
+  searchState.recipes = baseRecipes;
 
   // Reset the searchIds object
-  searchIds.mainSearchRecipeIds = new Set();
   searchIds.ingredientsRecipeIds = new Set();
   searchIds.appliancesRecipeIds = new Set();
   searchIds.toolsRecipeIds = new Set();
-
-  // Fill the main search recipe ids Set
-  searchState.recipes.forEach((recipe) => {
-    searchIds.mainSearchRecipeIds.add(recipe.id);
-  });
 
   // Fill the ingredients recipe ids Set
   searchState.appliedFilters.forEach((appliedFilter) => {
@@ -83,15 +83,8 @@ const computeSearch = (isFilterRemoved) => {
     }
   });
 
-  // Recipe Ids
-  const recipeIds = [];
-
-  baseRecipes.forEach((recipe) => {
-    recipeIds.unshift(recipe.id);
-  });
-
   // Computed recipeIds Arr
-  const computedRecipeIds = recipeIds.filter(
+  const computedRecipeIds = baseRecipeIds.filter(
     (value) =>
       (Array.from(searchIds.mainSearchRecipeIds).includes(value) ||
         Array.from(searchIds.mainSearchRecipeIds).length === 0) &&
@@ -108,6 +101,14 @@ const computeSearch = (isFilterRemoved) => {
 
   // Update the references array
   searchState.references = RecipesModel.getReferences(searchState.recipes);
+
+  // Remove applied filters from the references array
+  searchState.appliedFilters.forEach((appliedFilter) => {
+    const filterId = appliedFilter.referenceId;
+    const subArrId = appliedFilter.referencesSubArr;
+
+    searchState.references[subArrId].splice(filterId, 1);
+  });
 
   // Reload the page
   HomeView.reloadPage(searchState.recipes, searchState.references);
@@ -153,7 +154,7 @@ const addFilter = (event) => {
 
   BtnHelper.addFilter(event);
 
-  computeSearch(false);
+  computeSearch();
 };
 
 // REMOVE FILTER HANDLER
@@ -169,7 +170,7 @@ const removeFilter = (event) => {
 
   BtnHelper.removeFilter(event);
 
-  computeSearch(true);
+  computeSearch();
 };
 
 // CALL THE FILTER SEARCH BAR HANDLER
@@ -203,6 +204,8 @@ const callFilterSearchHandler = (value, filterType) => {
   if (hasFiltersChanged) {
     // Reload the filters list
     HomeView.reloadFiltersList(filterType, filteredFilters);
+
+    setEventListenersOnFilters();
   }
 };
 
@@ -218,28 +221,22 @@ const callMainSearchHandler = (value) => {
   ];
 
   // Toggle to know if the recipes array is filtered after calling the search handler
-  const { isRecipesFiltered, hasRecipesChanged, filteredRecipes } = SearchHelper.mainSearchHandler(
-    value,
-    searchState.isMainSearchApplied,
-    mainSearchReferences,
-    baseRecipes
-  );
+  const { isRecipesFiltered, hasRecipesChanged, filteredRecipeIds } =
+    SearchHelper.mainSearchHandler(
+      value,
+      searchState.isMainSearchApplied,
+      mainSearchReferences,
+      baseRecipeIds
+    );
 
   // Update the isMainSearchApplied toggle
   searchState.isMainSearchApplied = isRecipesFiltered;
 
   if (hasRecipesChanged) {
-    // Update the recipes array
-    searchState.recipes = filteredRecipes;
+    // Update the main search recipe ids array
+    searchIds.mainSearchRecipeIds = filteredRecipeIds;
 
-    searchState.appliedFilters.forEach((appliedFilter) => {
-      const filterId = appliedFilter.referenceId;
-      const subArrId = appliedFilter.referencesSubArr;
-
-      searchState.references[subArrId].splice(filterId, 1);
-    });
-
-    computeSearch(false);
+    computeSearch();
   }
 };
 
