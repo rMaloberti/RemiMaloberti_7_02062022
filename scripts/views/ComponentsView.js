@@ -67,12 +67,11 @@ export default class ComponentsView {
     const { type, filters } = data;
 
     /* Component wrapper */
-    const filtersBtn = document.createElement('button');
+    const filtersBtn = document.createElement('div');
     filtersBtn.id = `${type}-filters-btn`;
     filtersBtn.classList.add('filters-btn');
     filtersBtn.classList.add('filters-btn--closed');
     filtersBtn.classList.add(`filters-btn--${type}`);
-    filtersBtn.setAttribute('type', 'button');
 
     /* Component header */
     const btnHeader = document.createElement('div');
@@ -155,7 +154,7 @@ export default class ComponentsView {
     const thumbImg = document.createElement('img');
     thumbImg.classList.add('recipe-card-thumbnail__img');
     thumbImg.setAttribute('alt', '');
-    thumbImg.setAttribute('src', '');
+    thumbImg.setAttribute('src', '#');
     /* END Thumbnail image */
 
     cardThumb.appendChild(thumbImg);
